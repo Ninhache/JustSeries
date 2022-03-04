@@ -1,0 +1,15 @@
+{
+  "name": "projet_2022_ambre_neo_eliott",
+  "version": "1.0.0",
+  "description": "Projet de javascript en semestre 4 de DUT informatique à l'université de Lille",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.univ-lille.fr/eliott.collin.etu/projet_2022_ambre_neo_eliott"
+  },
+  "author": "",
+  "license": "ISC"
+}

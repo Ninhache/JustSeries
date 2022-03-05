@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    max-height: 200px;
+    margin: 20px;
+}

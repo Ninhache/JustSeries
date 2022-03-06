@@ -12,7 +12,7 @@ _inseré description ici_
 ## Installation
 1) run : `npm install` in root directory (same as package.json file)
 2) run : `npm run build` to compile files
-3) run : `npx run serve` to set up local server and run it
+3) run : `npm run serve` to set up local server and run it
 4) project available [here](http://localhost:8000/) !! 
 
 ## images/screen

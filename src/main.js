@@ -2,7 +2,11 @@ import Title from './Title';
 import TvMazeRequester from "./api/TvMazeRequester"
 import PrototypeCard from "./PrototypeCard"
 
+import { ExemplePage } from "./pages/ExemplePage"
+import { MainPage } from "./pages/MainPage"
+
 // Initialise and input default value to the page
+/*
 const request = new TvMazeRequester();
 const content = []
 let str = "";
@@ -18,11 +22,14 @@ request.getPage(0).then(data => data.json())
         document.getElementById("content").innerHTML = str;
         str = "";
     });
+*/
+
+//document.getElementById("content").innerHTML = MainPage();
 
 
 
 // handle search bar
-
+/*
 const searchForm = document.querySelector("body > header > form");
 const searchInputText = document.querySelector("body > header > form > input[type=text]");
 const searchButton = document.querySelector("body > header > form > button");
@@ -49,7 +56,7 @@ searchInputText.addEventListener("keyup", event => {
     });
 })
 
-
+*/
 
 
 

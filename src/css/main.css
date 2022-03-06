@@ -2,15 +2,23 @@
     margin: 0;
 }
 
-#content {
-    display: flex;
-    flex-wrap: wrap;
+body, html {
+    width: 100%;
+    height: 100%;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    max-width: 150px;
-    max-height: 200px;
-    margin: 20px;
+body {
+    z-index: -1;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+}
+
+

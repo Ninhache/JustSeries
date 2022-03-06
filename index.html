@@ -5,20 +5,55 @@
     <title>Prototype page</title>
     <script src="build/main.bundle.js" defer></script>
     <link rel="stylesheet" href="./src/css/main.css">
-    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/leftMenu.css">
 </head>
 <body>
-    <header>
-        <h1 id="title"></h1>
-        <form class="searchbarForm">
-            <input type="text">
-            <button type="submit">Chercher</button>
-        </form>
-    </header>
-
-    <main id="content">
-
-    </main>
     
+    <div class="leftMenu">
+        
+
+        <div class="userInfo">
+            <img src="./img/logo_app.png" class="logoSize">
+            <h3 class="userWelcome nowrap hideOnHover">Bienvenue %nom%</h3>
+        </div>
+        <!-- add :after for the separator -->
+        <div class="leftMenuLinks nowrap hideOnHover">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="./img/logo_app.png" class="logoSize">
+                        <h3>Dernière sortie</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/logo_app.png" class="logoSize">
+                        <h3>Planning des sorties</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/logo_app.png" class="logoSize">
+                        <h3>Des trucs en plus</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="leftMenuAdditionnals nowrap hideOnHover">
+            <ul>
+                <li><a href="#">Truc tt en bas genre</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <h1>Salut mon pote !</h1>
+    </div>
+
+    <div class="black"></div>
+
+
 </body>
 </html>

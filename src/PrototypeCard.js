@@ -1,3 +1,5 @@
+import PrototypePopup from "./PrototypePopup";
+
 export default class PrototypeCard {
 
     constructor(element) {
@@ -17,11 +19,13 @@ export default class PrototypeCard {
         
         div.addEventListener("click", event => {
             console.log(this.id);
+            new PrototypePopup(this.element);
         })
 
         div.innerHTML = `<div class="card" id="${this.id}">
         <h3>${this.name}</h3>
         <img src=${this.image} width="150" height="150">
+        <p class="open">Ouvrir</p>
         </div>`
 
         return div;

@@ -1,14 +1,6 @@
 export default class PrototypeSearchBar {
 
-    constructor(element) {
-        this.element = element;
-        this.id = element.id;
-        this.name = element.name;
-        this.image = element.image?.medium;
-        if(this.image == undefined) {
-            this.image = "https://media.discordapp.net/attachments/624976021417885707/949465775146688512/unknown.png"
-        }
-    }
+    constructor() { }
 
     render() {
         const form = document.createElement("form");
@@ -18,10 +10,19 @@ export default class PrototypeSearchBar {
                                 <button type="submit">Chercher</button>
                             </form>`
 
-        const searchBar = form.querySelector("input");
-        
+        const searchInputText = form.querySelector("input[type=text]");
+        const searchButton = form.querySelector("button");
 
-        return div;
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+            if(searchInputText.value.length === 0) {
+                
+            } else {
+                console.log("UTILISER LE ROOTER");
+                console.log(event);
+            }
+        })
+
+        return form;
     }
-
 }

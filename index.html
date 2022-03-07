@@ -6,6 +6,7 @@
     <script src="build/main.bundle.js" defer></script>
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/leftMenu.css">
+    <link rel="stylesheet" href="./src/css/header.css">
     <link rel="stylesheet" href="./src/css/content.css">
 </head>
 <body>
@@ -17,23 +18,23 @@
         </div>
         <!-- add :after for the separator -->
         <div class="leftMenuLinks nowrap hideOnHover">
-            <ul>
+            <ul class="menu">
                 <li>
-                    <a href="#">
+                    <a href="/">
                         <img src="./img/logo_app.png" class="logoSize">
-                        <h3>Dernière sortie</h3>
+                        <h3>Accueil</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/favoris">
                         <img src="./img/logo_app.png" class="logoSize">
-                        <h3>Planning des sorties</h3>
+                        <h3>Favoris</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/equipe">
                         <img src="./img/logo_app.png" class="logoSize">
-                        <h3>Des trucs en plus</h3>
+                        <h3>Équipe</h3>
                     </a>
                 </li>
             </ul>
@@ -48,6 +49,7 @@
     </div>
 
     <div class="root">
+
         <header>
             <h1 id="title"></h1>
             <div class="formContent">
@@ -56,7 +58,7 @@
         </header>
     
         <main id="content">
-
+            
         </main>
     
     </div>

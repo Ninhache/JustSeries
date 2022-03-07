@@ -6,12 +6,11 @@
     <script src="build/main.bundle.js" defer></script>
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/leftMenu.css">
+    <link rel="stylesheet" href="./src/css/content.css">
 </head>
 <body>
     
     <div class="leftMenu">
-        
-
         <div class="userInfo">
             <img src="./img/logo_app.png" class="logoSize">
             <h3 class="userWelcome nowrap hideOnHover">Bienvenue %nom%</h3>
@@ -48,8 +47,19 @@
 
     </div>
 
-    <div class="content">
-        <h1>Salut mon pote !</h1>
+    <div class="root">
+        <header>
+            <h1 id="title"></h1>
+            <form class="searchbarForm">
+                <input type="text">
+                <button type="submit">Chercher</button>
+            </form>
+        </header>
+    
+        <main id="content">
+
+        </main>
+    
     </div>
 
     <div class="black"></div>

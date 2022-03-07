@@ -1,5 +1,8 @@
 export default class PrototypeCard {
+
     constructor(element) {
+        this.element = element;
+        this.id = element.id;
         this.name = element.name;
         this.image = element.image?.medium;
         if(this.image == undefined) {
@@ -8,9 +11,19 @@ export default class PrototypeCard {
     }
 
     render() {
-        return `<div class="card">
+        const div = document.createElement("div");
+        div.id = this.id;
+
+        
+        div.addEventListener("click", event => {
+            console.log(this.id);
+        })
+
+        div.innerHTML = `<div class="card" id="${this.id}">
         <h3>${this.name}</h3>
         <img src=${this.image} width="150" height="150">
         </div>`
+
+        return div;
     }
 }

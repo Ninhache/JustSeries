@@ -6,33 +6,26 @@ import { ExemplePage } from "./pages/ExemplePage"
 import { MainPage } from "./pages/MainPage"
 
 // Initialise and input default value to the page
-/*
+
 const request = new TvMazeRequester();
-const content = []
+const content = [];
+const tmpContent = [];
+const main = document.querySelector("#content")
+
 let str = "";
-document.getElementById('title').innerText = new Title().render();
-request.getPage(0).then(data => data.json())
-    .then(data => {
-        data.forEach(element => {
-            content.push(new PrototypeCard(element));
-        });
-    }).then(() => {
-        content.forEach(item => str += item.render())
-    }).then(() => {
-        document.getElementById("content").innerHTML = str;
-        str = "";
-    });
-*/
+
+
+
 
 //document.getElementById("content").innerHTML = MainPage();
 
 
 
 // handle search bar
-/*
-const searchForm = document.querySelector("body > header > form");
-const searchInputText = document.querySelector("body > header > form > input[type=text]");
-const searchButton = document.querySelector("body > header > form > button");
+
+const searchForm = document.querySelector("body > .root > header > form");
+const searchInputText = document.querySelector("body > .root > header > form > input[type=text]");
+const searchButton = document.querySelector("body > .root > header > form > button");
 
 searchForm.addEventListener("submit", event => {
     event.preventDefault();
@@ -41,22 +34,43 @@ searchForm.addEventListener("submit", event => {
 
 
 searchInputText.addEventListener("keyup", event => {
-    content.length = 0;
-    request.getByName(searchInputText.value).then(data => data.json())
-    .then(data => {
-        data.forEach(element => {
-            console.log(element.show)
-            content.push(new PrototypeCard(element.show));
+    //request.stop();
+    
+    if(searchInputText.value.length === 0) {
+        request.getPage(0)
+        .then(data => data.json())
+        .then(data => {
+            document.getElementById("content").innerHTML = ""
+            data.forEach(element => {
+                document.getElementById("content").appendChild(new PrototypeCard(element).render());
+            });
+
         });
-    }).then(() => {
-        content.forEach(item => str += item.render())
-    }).then(() => {
-        document.getElementById("content").innerHTML = str;
-        str = "";
-    });
+    } else {
+        request.getByName(searchInputText.value)
+        .then(data => data.json())
+        .then(data => {
+            document.getElementById("content").innerHTML = ""
+            data.forEach(element => {
+                document.getElementById("content").appendChild(new PrototypeCard(element.show).render());
+            });
+
+        });
+    }
 })
 
-*/
+
+request.getPage(0)
+        .then(data => data.json())
+        .then(data => {
+            document.getElementById("content").innerHTML = ""
+            data.forEach(element => {
+                document.getElementById("content").appendChild(new PrototypeCard(element).render());
+            });
+
+        });
+
+
 
 
 

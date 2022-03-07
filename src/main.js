@@ -1,15 +1,18 @@
 import {Router} from "./Router";
+import {HomePage} from "./page/HomePage";
+import {FavoriPage} from "./page/FavoriPage";
+import {TeamPage} from "./page/TeamPage";
 
-let homePage = "we trying to build the page";
-let FavPage = "No fav for now, come back later";
-let TeamPage = "The best you never see !";
+let homePage = new HomePage();
+let favPage = new FavoriPage();
+let teamPage = new TeamPage();
 
 Router.titleElement = document.querySelector(".pageTitle");
 Router.contentElement = document.querySelector(".pageContent");
 Router.routes = [
     {path: '/', page: homePage, title: "Work in progress ..."},
-    {path: '/favoris', page: FavPage, title: "Series you like, I think..."},
-    {path: '/equipe', page: TeamPage, title: "Our team"}
+    {path: '/favoris', page: favPage, title: "Series you like, I think..."},
+    {path: '/equipe', page: teamPage, title: "Our team"}
 ];
 
 Router.menuElement = document.querySelector('.menu');
@@ -20,3 +23,9 @@ Router.navigate(document.location.pathname);
 window.onpopstate = () => {
     Router.navigate(document.location.pathname, false);
 };
+
+document.querySelector(".addFav").addEventListener( 'submit', event => {
+    event.preventDefault();
+    const input = event.currentTarget.querySelector("input");
+    console.log(input.value);
+});

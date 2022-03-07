@@ -27,7 +27,7 @@ export class Router {
             if(pushState) window.history.pushState(null, null, path);
 
             this.titleElement.innerHTML = `<h1>${route.title}</h1>`;
-            this.contentElement.innerHTML = route.page;
+            this.contentElement.innerHTML = route.page.render();
         } else {
             this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;
             this.contentElement.innerHTML = "WTF you doing here ?? go back your home";

@@ -1,4 +1,6 @@
-export class FavoriPage {
+import {Page} from "./Page";
+
+export class FavoriPage extends Page{
 
 
 

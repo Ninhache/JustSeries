@@ -16,8 +16,6 @@ export class Router {
                     console.log("go to : " + path);
                 })
             });
-
-
     }
 
 
@@ -28,6 +26,7 @@ export class Router {
 
             this.titleElement.innerHTML = `<h1>${route.title}</h1>`;
             this.contentElement.innerHTML = route.page.render();
+            route.page?.mount(this.contentElement);
         } else {
             this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;
             this.contentElement.innerHTML = "WTF you doing here ?? go back your home";

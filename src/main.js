@@ -28,4 +28,16 @@ document.querySelector(".addFav").addEventListener( 'submit', event => {
     event.preventDefault();
     const input = event.currentTarget.querySelector("input");
     console.log(input.value);
+
+    const local = localStorage.getItem("favs_id");
+    const myFavs = [input.value];
+
+    JSON.parse(local)?.forEach( element => {
+        myFavs.push(element);
+    });
+
+    localStorage.setItem("favs_id", JSON.stringify(myFavs));
+
+
+
 });

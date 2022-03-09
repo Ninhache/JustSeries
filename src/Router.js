@@ -22,12 +22,16 @@ export class Router {
 
 
     static navigate(path, pushState= true) {
-        const route = this.routes.find(val => val.path === path);
+        console.log(`[Router] Received : ${path}`);
+        console.log(`[Router] Parsed... : ${path.split("?")[0]}`);
+        const route = this.routes.find(val => val.path.startsWith(path.split("?")[0]));
+        console.log(`[Router] Find this route : ${route}`);
         if(route) {
             if(pushState) window.history.pushState(null, null, path);
 
             this.titleElement.innerHTML = `<h1>${route.title}</h1>`;
-            this.contentElement.innerHTML = route.page;
+            this.contentElement.innerHTML = route.page?.render();
+            route.page?.mount(this.contentElement);
         } else {
             this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;
             this.contentElement.innerHTML = "WTF you doing here ?? go back your home";

@@ -1,22 +1,36 @@
-import {Router} from "./Router";
+import { Router } from "./Router";
 
 import TvMazeRequester from "./api/TvMazeRequester"
 import PrototypeCard from "./PrototypeCard"
 import PrototypeSearchBar from './PrototypeSearchBar';
+import { ResultPage } from "./pages/ResultPage";
+import { MainPage } from "./pages/MainPage";
 
 
-let homePage = "we trying to build the page";
-let FavPage = "No fav for now, come back later";
-let TeamPage = "The best you never see !";
+const HomePage = new MainPage();
+const Results = new ResultPage();
+
+const FavPage = "No fav for now, come back later";
+const TeamPage = "The best you never see !";
 
 
 Router.titleElement = document.querySelector(".root > header > #title");
 Router.contentElement = document.querySelector(".root > #content");
+
+Router.routes = [
+    { path: '/', page: HomePage, title: "Work in progress ..." },
+    { path: '/search', page: Results, title: "TestTitre" }
+]
+
+
+/*
 Router.routes = [
     { path: '/', page: homePage, title: "Work in progress ..." },
     { path: '/favoris', page: FavPage, title: "Series you like, I think..." },
-    { path: '/equipe', page: TeamPage, title: "Our team" }
+    { path: '/equipe', page: TeamPage, title: "Our team" },
+    { path: '/search', page: ResultPage, title: "TestTitre" }
 ];
+*/
 
 Router.menuElement = document.querySelector('.menu');
 

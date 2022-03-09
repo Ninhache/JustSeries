@@ -4,25 +4,67 @@
     <meta charset="UTF-8">
     <title>Mega projet trop cool</title>
     <script src="build/main.bundle.js" defer></script>
+    <link rel="stylesheet" href="./src/css/main.css">
+    <link rel="stylesheet" href="./src/css/leftMenu.css">
+    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/content.css">
 </head>
 <body>
-    <header>
-        <nav>
+
+    <div class="leftMenu">
+        <div class="userInfo">
+            <img src="./img/logo_app.png" class="logoSize">
+            <h3 class="userWelcome nowrap hideOnHover">Bienvenue %nom%</h3>
+        </div>
+        <!-- add :after for the separator -->
+        <div class="leftMenuLinks nowrap hideOnHover">
             <ul class="menu">
-                <li><a href="/">Acceuil</a></li>
-                <li><a href="/favoris">Favoris</a></li>
-                <li><a href="/equipe">Equipe</a></li>
+                <li>
+                    <a href="/">
+                        <img src="./img/logo_app.png" class="logoSize">
+                        <h3>Accueil</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="/favoris">
+                        <img src="./img/logo_app.png" class="logoSize">
+                        <h3>Favoris</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="/equipe">
+                        <img src="./img/logo_app.png" class="logoSize">
+                        <h3>Équipe</h3>
+                    </a>
+                </li>
             </ul>
-        </nav>
-    </header>
-    <form class="addFav">
-        <input type="text">
-        <button type="submit">add Fav</button>
-    </form>
-    <section class="pageContainer">
-        <header class="pageTitle"></header>
-        <div class="pageContent"></div>
-    </section>
+        </div>
+
+        <div class="leftMenuAdditionnals nowrap hideOnHover">
+            <ul>
+                <li><a href="#">Truc tt en bas genre</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="root">
+
+        <header>
+            <h1 id="title"></h1>
+            <div class="formContent">
+
+            </div>
+        </header>
+
+        <main id="content">
+
+        </main>
+
+    </div>
+
+    <div class="black"></div>
+
 
 </body>
 </html>

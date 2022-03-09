@@ -1,0 +1,21 @@
+
+
+
+
+.root {
+    background-color: rgb(183, 183, 238);
+    
+    height: 100%;
+    
+    z-index: -5;
+    padding-left: 100px;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 150px;
+}

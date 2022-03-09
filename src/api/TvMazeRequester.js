@@ -5,8 +5,19 @@ import RequestHandler from './RequestHandler';
  * @example `new TvMazeRequester().getPage(5).then(data => doSomethingWith);`
  */
 export default class TvMazeRequester extends RequestHandler {
+
+	controller;
+
 	constructor() {
 		super('https://api.tvmaze.com');
+		this.controller = new AbortController();
+	}
+
+	/**
+	 * Stop all fetch associated with the current signal
+	 */
+	stop() {
+		this.controller.abort();
 	}
 
 	/**
@@ -15,7 +26,7 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
 	getPage(index) {
-		return fetch(`${this.baseUrl}/shows?page=${index ? index : 0}`);
+		return fetch(`${this.baseUrl}/shows?page=${index ? index : 0}`, {signal: this.controller.signal});
 	}
 
     /**
@@ -24,7 +35,7 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
 	getByName(name) {
-		return fetch(`${this.baseUrl}/search/shows?q=${name}`);
+		return fetch(`${this.baseUrl}/search/shows?q=${name}`, {signal: this.controller.signal});
 	}
 
     /**
@@ -33,7 +44,7 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
 	getByActor(name) {
-		return fetch(`${this.baseUrl}/search/people?q=${name}`);
+		return fetch(`${this.baseUrl}/search/people?q=${name}`, {signal: this.controller.signal});
 	}
 
     /**
@@ -42,7 +53,7 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
 	getById(id) {
-		return fetch(`${this.baseUrl}/shows/${id}`);
+		return fetch(`${this.baseUrl}/shows/${id}`, {signal: this.controller.signal});
 	}
 
     /**
@@ -51,7 +62,7 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
 	getEpisodesById(id) {
-		return fetch(`${this.baseUrl}/shows/${id}/episodes`);
+		return fetch(`${this.baseUrl}/shows/${id}/episodes`, {signal: this.controller.signal});
 	}
 
     /**
@@ -62,7 +73,7 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
 	getEpisodeByIdSeasonNumber(id, season, number) {
-		return fetch(`${this.baseUrl}/shows/${id}/episodebynumber?season=${season}&number=${number}`);
+		return fetch(`${this.baseUrl}/shows/${id}/episodebynumber?season=${season}&number=${number}`, {signal: this.controller.signal});
 	}
 
     /**
@@ -72,23 +83,23 @@ export default class TvMazeRequester extends RequestHandler {
 	 * @return {Promise} need to be handeled.
 	 */
     getEpisodeByIdDate(id, date) {
-        return fetch(`${this.baseUrl}/shows/${id}/episodesbydate?date=${date}`);
+        return fetch(`${this.baseUrl}/shows/${id}/episodesbydate?date=${date}`, {signal: this.controller.signal});
     }
-    
+
     getCastingById(id) {
-        return fetch(`${this.baseUrl}/shows/${id}/cast`);
+        return fetch(`${this.baseUrl}/shows/${id}/cast`, {signal: this.controller.signal});
     }
 
     getImagesById(id) {
-        return fetch(`${this.baseUrl}/shows/${id}/images`);
+        return fetch(`${this.baseUrl}/shows/${id}/images`, {signal: this.controller.signal});
     }
 
     getActors(index) {
-        return fetch(`${this.baseUrl}/people?page=${index ? index : 0}`);
+        return fetch(`${this.baseUrl}/people?page=${index ? index : 0}`, {signal: this.controller.signal});
     }
 
     getActorsById(id) {
-        return fetch(`${this.baseUrl}/people/${id}`);
+        return fetch(`${this.baseUrl}/people/${id}`, {signal: this.controller.signal});
     }
 
 }

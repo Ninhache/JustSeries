@@ -14,7 +14,7 @@ export default class PrototypeCard {
         const div = document.createElement("div");
         div.id = this.id;
 
-        
+        div.style.cursor = "pointer"; // todo : move to css
         div.addEventListener("click", event => {
             console.log(this.id);
         })

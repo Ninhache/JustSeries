@@ -39,17 +39,3 @@ window.onpopstate = () => {
 // Display search bar
 document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
 
-
-// Display "welcome" page
-const request = new TvMazeRequester();
-
-
-request.getPage(0)
-	.then(data => data.json())
-	.then(data => {
-		document.getElementById("content").innerHTML = ""
-		data.forEach(element => {
-			document.getElementById("content").appendChild(new PrototypeCard(element).render());
-		});
-
-	});

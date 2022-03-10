@@ -25,7 +25,8 @@ Router.routes = [
 	{path: '/search', page: Results, title: "TestTitre" }
 ];
 
-Router.navigate(document.location.pathname);
+
+Router.navigate(document.location.pathname + document.location.search);
 
 window.onpopstate = () => {
 	Router.navigate(document.location.pathname, false);

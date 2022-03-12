@@ -5,8 +5,6 @@ import { TeamPage } from "./pages/TeamPage";
 import { ResultPage } from "./pages/ResultPage";
 
 import PrototypeSearchBar from './PrototypeSearchBar';
-import TvMazeRequester from "./api/TvMazeRequester";
-import PrototypeCard from "./PrototypeCard";
 
 const homePage = new HomePage();
 const favPage = new FavoriPage();

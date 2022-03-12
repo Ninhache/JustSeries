@@ -66,3 +66,9 @@
     animation-duration: 2000ms;
     animation-fill-mode: forwards;
 }
+
+.menu > li > a > div > i {
+    margin: 22px;
+    width: 40px;
+    height: 40px;
+}

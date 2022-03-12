@@ -1,4 +1,4 @@
-import {Page} from "./Page";
+import {Page} from "../page/Page";
 import TvMazeRequester from "../api/TvMazeRequester";
 import PrototypeCard from "../PrototypeCard";
 

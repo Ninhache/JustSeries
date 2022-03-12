@@ -1,4 +1,4 @@
-import {Page} from "./Page";
+import {Page} from "../page/Page";
 import TvMazeRequester from "../api/TvMazeRequester";
 import PrototypeCard from "../PrototypeCard";
 
@@ -7,7 +7,7 @@ export class FavoriPage extends Page{
     mount(element) {
         super.mount(element);
 
-        const local = localStorage.getItem("favs_id");
+        const local = localStorage.getItem("favs_id") || JSON.stringify([]);
         const myFav = JSON.parse(local);
 
         const request = new TvMazeRequester();

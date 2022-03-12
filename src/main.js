@@ -1,7 +1,7 @@
 import { Router } from "./Router";
-import { HomePage } from "./page/HomePage";
-import { FavoriPage } from "./page/FavoriPage";
-import { TeamPage } from "./page/TeamPage";
+import { HomePage } from "./pages/HomePage";
+import { FavoriPage } from "./pages/FavoriPage";
+import { TeamPage } from "./pages/TeamPage";
 import { ResultPage } from "./pages/ResultPage";
 
 import PrototypeSearchBar from './PrototypeSearchBar';

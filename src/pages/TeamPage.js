@@ -1,4 +1,4 @@
-import {Page} from "../page/Page";
+import {Page} from "./Page";
 
 export class TeamPage extends Page{
 

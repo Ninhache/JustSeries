@@ -1,0 +1,26 @@
+.card {
+    border: 2px solid green;
+    min-width: 300px;
+    margin: 20px;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.card img {
+    min-width: 300px;
+}
+
+.card p {
+    border: 1px solid blue;
+
+    line-height: 1.5em;
+    overflow:hidden;
+    max-height: 9em;
+}
+
+.card .rating {
+    /* todo : fonctionne pas */
+    text-align: right;
+}

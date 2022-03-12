@@ -11,6 +11,10 @@ const favPage = new FavoriPage();
 const teamPage = new TeamPage();
 const Results = new ResultPage();
 
+if (!localStorage.favs_id) {
+	localStorage.setItem("favs_id", JSON.stringify([]));
+}
+
 
 Router.menuElement = document.querySelector('.menu');
 Router.titleElement = document.querySelector(".root > header > #title");

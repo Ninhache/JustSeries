@@ -23,7 +23,7 @@ export class Router {
         const route = this.routes.find(val => val.path.startsWith(path.split("?")[0]));
         if (route) {
             if (pushState) window.history.pushState(null, null, path);
-
+            document.title = route.windowTitle;
             this.titleElement.innerHTML = `<h1>${route.title}</h1>`;
             this.contentElement.innerHTML = route.page?.render();
             route.page?.mount(this.contentElement);

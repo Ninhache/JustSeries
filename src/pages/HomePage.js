@@ -1,6 +1,6 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../PrototypeCard";
+import Card from "../Card";
 
 export class HomePage extends Page {
 
@@ -13,7 +13,7 @@ export class HomePage extends Page {
             .then(data => {
                 element.innerHTML = ""
                 data.forEach(element => {
-                    this.element.appendChild(new PrototypeCard(element).render());
+                    this.element.appendChild(new Card(element).render());
                 });
 
             });

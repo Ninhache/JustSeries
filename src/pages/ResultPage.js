@@ -1,7 +1,7 @@
 import { Page } from "./Page";
 
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../PrototypeCard";
+import Card from "../Card";
 
 class ResultPage extends Page {
 
@@ -10,7 +10,7 @@ class ResultPage extends Page {
     render() {
 
         const urlParams = new URLSearchParams(window.location.search);
-        if(urlParams.get("q") != undefined) {
+        if(urlParams.get("q") !== undefined) {
             this.query = urlParams.get("q");
         }
 
@@ -28,7 +28,7 @@ class ResultPage extends Page {
                 } else {
                     console.log(data);
                     data.forEach(item => {
-                        element.appendChild(new PrototypeCard(item.show).render());
+                        element.appendChild(new Card(item.show).render());
                     });
                 }
             })

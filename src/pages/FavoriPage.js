@@ -1,6 +1,6 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../PrototypeCard";
+import Card from "../Card";
 
 export class FavoriPage extends Page{
 
@@ -15,7 +15,7 @@ export class FavoriPage extends Page{
         myFav.forEach( id => {
             request.getById(id)
                 .then( data => data.json())
-                .then( data => element.appendChild(new PrototypeCard(data).render()))
+                .then( data => element.appendChild(new Card(data).render()))
                 .then( () => element.querySelector(".wait").hidden = true);
         });
     }

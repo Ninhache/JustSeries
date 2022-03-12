@@ -33,7 +33,7 @@ export default class Card {
             <h2>${this.name}</h2>
             <img src=${this.image} alt="image of ${this.name}">
             <span class="firtDifution">Premiere diffution : ${this.premiered}</span>
-            ${this.summary}
+            <div class="summary">${this.summary}</div>
             <span class="rating">note : ${this.rating}/10</span>
         </div>`;
 

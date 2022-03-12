@@ -18,7 +18,7 @@ Router.menuElement = document.querySelector('.menu');
 Router.titleElement = document.querySelector(".root > header > #title");
 Router.contentElement = document.querySelector(".root > #content");
 
-Router.routes = [
+Router.routes = [ // set all pages
 	{path: '/', page: homePage, title: "Work in progress ..."},
 	{path: '/favoris', page: favPage, title: "Series you like, I think..."},
 	{path: '/equipe', page: teamPage, title: "Our team"},
@@ -26,7 +26,7 @@ Router.routes = [
 ];
 
 
-Router.navigate(document.location.pathname + document.location.search);
+Router.navigate(document.location.pathname + document.location.search); // get full url and move to
 
 window.onpopstate = () => {
 	Router.navigate(document.location.pathname, false);

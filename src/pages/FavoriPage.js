@@ -28,16 +28,10 @@ export class FavoriPage extends Page{
             myFav.forEach(id => promiseArray.push(request.getById(id).then(response => response.json())));
             
             Promise.allSettled(promiseArray).then((values) => {
-                console.log(values)
-                // faut ajouter les elements
-                /*
                 values.forEach(item => {
-                    console.log(item)
-                    element.appendChild(new PrototypeCard(item).render());
-                });
-                element.querySelector(".wait").classList.remove("wait");
-                */
-            });
+                    element.appendChild(new PrototypeCard(item.value).render());    
+                })
+            }).then( () => element.querySelector(".wait").classList.remove("wait"));
             
 
             //promiseArray.push()

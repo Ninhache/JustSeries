@@ -9,6 +9,7 @@ export default class TvMazeRequester extends RequestHandler {
 	controller;
 
 	constructor() {
+		
 		super('https://api.tvmaze.com');
 		this.controller = new AbortController();
 	}

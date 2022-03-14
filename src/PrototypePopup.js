@@ -1,34 +1,49 @@
 export default class PrototypePopup {
-    constructor(element){
+    constructor({name,summary,rating,premiered,genres,language,image}){
         // prévoir si un attribut est undefined ..
         
-        this.name = element.name;
-        this.description = element.description;
-        this.note = element.note;
-        this.date = element.date;
-        this.genre = element.genre;
-        this.langage = element.langage;
-        this.image = element.image?.medium;
+        this.name=name;
+        this.summary = summary;
+        this.rating = rating?.average;
+        this.premiered = premiered;
+        this.genres = genres;
+        this.language = language;
+        if(language == undefined){language="unknown"}
+        this.image = image?.original;
         if(this.image == undefined) {
             this.image = "https://media.discordapp.net/attachments/624976021417885707/949465775146688512/unknown.png"
         }
         console.log(this.name);
-        console.log(this.note);
-        console.log(this.date);
-        console.log(this.genre);
-        console.log(this.langage);
+        console.log(this.rating);
+        console.log(this.premiered);
+        console.log(this.genres);
+        console.log(this.language);
         console.log(this.image);
     }
 
     render() { // changer class
-        return `<div class="popup" id="popupSerie">
-        <h3>${this.name}</h3>
-        <img src=${this.image} width="150" height="150">
-        <p>${this.description}</p>
-        <p>${this.note}\n${this.date}\n${this.genre}\n${this.langage}</p>
-        <p class="close">Fermer</p>
-        </div>`
-    }
 
-    
+        const div = document.createElement("div");
+        div.className="popup";
+
+       
+        div.innerHTML = `<img src=${this.image} width="150" height="150">
+        <h3>${this.name}</h3>
+        <p>${this.summary}</p>
+        <p>${this.rating}</p>
+        <p>${this.premiered}</p>
+        <p>${this.genres}</p>
+        <p>${this.language}</p>
+        `
+        
+        const closeButton = document.createElement("button");
+        closeButton.innerHTML="close";
+        closeButton.addEventListener("click",event =>{
+                event.preventDefault();
+                document.querySelector(".popup").hidden = true;
+        })
+        div.appendChild(closeButton);
+        
+        return div;
+    }
 }

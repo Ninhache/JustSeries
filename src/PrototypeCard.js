@@ -19,14 +19,17 @@ export default class PrototypeCard {
         
         div.addEventListener("click", event => {
             console.log(this.id);
-            new PrototypePopup(this.element);
+            let proto = new PrototypePopup(this.element);
+            document.querySelector(".popup_container").innerHTML="";
+            document.querySelector(".popup_container").appendChild(proto.render());
         })
 
         div.innerHTML = `<div class="card" id="${this.id}">
         <h3>${this.name}</h3>
         <img src=${this.image} width="150" height="150">
-        <p class="open">Ouvrir</p>
         </div>`
+
+
 
         return div;
     }

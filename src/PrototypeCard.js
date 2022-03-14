@@ -29,6 +29,8 @@ export default class PrototypeCard {
             popup_container.innerHTML="";
             popup_container.appendChild(proto.render());
             popup_container.hidden=false;
+            document.querySelector("body").style.overflow="hidden";
+            
         })
         divTop.classList.add("cardShow")
 

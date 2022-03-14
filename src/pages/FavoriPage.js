@@ -24,40 +24,18 @@ export class FavoriPage extends Page{
 
         if (myFav.length > 0) {
 
-
+            const arrayElement = [];
             myFav.forEach(id => promiseArray.push(request.getById(id).then(response => response.json())));
             
             Promise.allSettled(promiseArray).then((values) => {
                 values.forEach(item => {
-                    element.appendChild(new PrototypeCard(item.value).render());    
+                    arrayElement.push(new PrototypeCard(item.value).render());    
                 })
-            }).then( () => element.querySelector(".wait").classList.remove("wait"));
-            
-
-            //promiseArray.push()
-            
-            /*
-            myFav.forEach( id => {
-                request.getById(id)
-                    .then( data => data.json())
-                    .then( data => {
-                        index++;
-                        element.appendChild(new PrototypeCard(data).render());    
-                    })
-
-                element.querySelector(".wait").classList.remove("wait");
-            });*/
-            
-
-            /*
-                .then( data => data.json())
-                .then( data => {
-                    index++;
-                    element.appendChild(new PrototypeCard(data).render());
-                })
-            */
-
-            //element.querySelector(".wait").classList.remove("wait");
+            }).then(() => {
+                element.innerHTML = "";
+                arrayElement.forEach(item => element.appendChild(item));
+                element.querySelector(".wait")?.classList.remove("wait");
+            })
         } else {
             element.innerHTML = "<h3>Pas de favoris ...</h3>"
         }

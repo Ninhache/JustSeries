@@ -14,7 +14,7 @@ class ResultPage extends Page {
             this.query = urlParams.get("q");
         }
 
-        return `<h1>En train de chercher pour ... ${this.query} </h1>`;
+        return "<span class='wait'>Wait a moment plz </span>";
     }
 
     mount(element) {
@@ -24,17 +24,15 @@ class ResultPage extends Page {
         new TvMazeRequester().getByName(this.query)
             .then(data => data.json())
             .then(data => {
+                element.innerHTML = "";
                 if(data.length === 0)  {
-                    throw new Error("Le nom recherché n'est pas valide");
+                        element.innerHTML = "<h3>Recherche non valide</h3>"
                 } else {
-                    console.log(data);
                     data.forEach(item => {
                         element.appendChild(new PrototypeCard(item.show).render());
                     });
                 }
-            })
-            .catch(err => {
-                console.log(err);
+                element.querySelector(".wait")?.classList.remove("wait");
             })
     }
 }

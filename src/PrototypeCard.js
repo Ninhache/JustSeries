@@ -30,7 +30,7 @@ export default class PrototypeCard {
             popup_container.appendChild(proto.render());
             popup_container.hidden=false;
             document.querySelector("body").style.overflow="hidden";
-            
+            document.getElementById("close").focus();
         })
         divTop.classList.add("cardShow")
 

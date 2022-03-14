@@ -1,7 +1,11 @@
+import TvMazeRequester from "./api/TvMazeRequester";
+import PrototypeCard from "./PrototypeCard";
+import PrototypeEpisode from "./PrototypeEpisode";
+
 export default class PrototypePopup {
-    constructor({name,summary,rating,premiered,genres,language,image}){
+    constructor({id,name,summary,rating,premiered,genres,language,image}){
         // prévoir si un attribut est undefined ..
-        
+        this.id=id;
         this.name=name;
         this.summary = summary;
         this.rating = rating?.average;
@@ -36,9 +40,7 @@ export default class PrototypePopup {
         <p>${this.language}</p>
         `
         
-
         function closeOnClick(event){
-            // event.stopPropagation();
             event.preventDefault();
             document.querySelector(".popup_container").hidden = true;
             document.querySelector("body").style.overflow="auto";
@@ -46,10 +48,12 @@ export default class PrototypePopup {
 
         const closeButton = document.createElement("button");
         closeButton.innerHTML="close";
+        closeButton.id="close";
+
         closeButton.addEventListener("click",event =>{
-            // event.stopPropagation();
             closeOnClick(event);
         })
+
         div.appendChild(closeButton);
       
         document.querySelector(".popup_container").addEventListener("click",event =>{
@@ -58,8 +62,24 @@ export default class PrototypePopup {
             }
             
         })
-        
-        
+        new TvMazeRequester().getEpisodesById(this.id)
+            .then(data => data.json())
+            .then(data => {
+                if(data.length === 0)  {
+                    throw new Error("L'id recherché n'est pas existant");
+                } else {
+                    for(let i=1;i<6;i++){
+                        let item = data[data.length-i]
+                        console.log(item)
+                        div.appendChild(new PrototypeEpisode(item).render());
+                    }
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
         return div;
+
     }
 }

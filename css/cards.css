@@ -29,7 +29,7 @@
 }
 
 .card {
-    max-width: 150px;
+    width: 20%;
 }
 
 .cardShow > .cardShowBottom {
@@ -106,10 +106,6 @@
     overflow-y: hidden;
 }
 
-.underCard {
-    position: absolute;
-}
-
 .card:hover .underCard {
     background: rgba(115,115,225,0.5);
     top: calc(100% - 66%);
@@ -126,6 +122,7 @@
     
     overflow: hidden;
     white-space: break-spaces;
+    font-size: 1em;
 
     display: -webkit-box;
     -webkit-line-clamp: 10;

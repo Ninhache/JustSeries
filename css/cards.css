@@ -1,16 +1,4 @@
-@keyframes zoomIn {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.07); }
-}
 
-@keyframes changeColor {
-    
-    
-    100% {
-        color: gold;
-        transform: scale(1.1);
-    }
-}
 
 .cardShow {
     white-space: nowrap;

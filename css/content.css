@@ -3,10 +3,9 @@
 
 
 .root {
-    background-color: rgb(183, 183, 238);
-    
+    background-color: rgb(183, 183, 238);    
     height: 100%;
-    
+    min-height: 400px;
     z-index: -5;
     padding-left: 100px;
 }

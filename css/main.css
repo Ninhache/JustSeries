@@ -1,3 +1,29 @@
+@keyframes rotate {
+	0% {
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+}
+
+@keyframes transitionBroken {
+    0% {background-color: rgba(0,0,0,0);}
+    100% {background-color: rgba(0,0,0,.5);}
+}	
+
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.07); }
+}
+
+@keyframes changeColor {   
+    100% {
+        color: gold;
+        transform: scale(1.1);
+    }
+}
+
 * {
     margin: 0;
 }
@@ -16,4 +42,17 @@ ul, li {
     padding: 0;
 }
 
-
+.wait::after {
+    content: '	';
+	position: absolute;
+	top:50%;
+	left:50%;
+	width: 50px;
+	height: 50px;
+	border: 1px #fff solid;
+	border-top-color: #fff2;
+	z-index: 2;
+	border-radius: 50%;
+	animation: rotate .5s linear infinite;
+	transform-origin: center;
+}

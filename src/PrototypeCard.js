@@ -25,8 +25,10 @@ export default class PrototypeCard {
         divTop.addEventListener("click", event => {
             console.log(this.id);
             let proto = new PrototypePopup(this.element);
-            document.querySelector(".popup_container").innerHTML="";
-            document.querySelector(".popup_container").appendChild(proto.render());
+            let popup_container = document.querySelector(".popup_container");
+            popup_container.innerHTML="";
+            popup_container.appendChild(proto.render());
+            popup_container.hidden=false;
         })
         divTop.classList.add("cardShow")
 

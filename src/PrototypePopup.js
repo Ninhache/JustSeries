@@ -40,7 +40,8 @@ export default class PrototypePopup {
         closeButton.innerHTML="close";
         closeButton.addEventListener("click",event =>{
                 event.preventDefault();
-                document.querySelector(".popup").hidden = true;
+                document.querySelector(".popup_container").hidden = true;
+
         })
         div.appendChild(closeButton);
         

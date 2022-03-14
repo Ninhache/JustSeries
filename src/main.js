@@ -42,3 +42,7 @@ window.onpopstate = () => {
 // Display search bar
 document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
 
+/**
+ * POPUP
+ */
+document.querySelector(".popup_container").hidden=true;

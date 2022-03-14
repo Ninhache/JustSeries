@@ -20,6 +20,12 @@
     bottom: 0;
 }
 
+.episode{
+    background-color: blueviolet;
+    border-color: black;
+    border-style: solid;
+    padding-top: 10px;
+}
 
 
 

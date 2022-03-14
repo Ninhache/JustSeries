@@ -17,3 +17,7 @@ export const removeFromFav = (id) => {
 export const isInFav = (id) => {
     return localStorage.getItem("favs_id")?.includes(id);
 }
+
+export const favIsEmpty = () => {
+    return JSON.parse(localStorage.getItem("favs_id"))?.length == 0;
+}

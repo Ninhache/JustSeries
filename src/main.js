@@ -69,28 +69,5 @@ request.getPage(0)
             });
 
         });
-
-
-
-// POPUP
-const openButton = Document.querySelector(".open");
-const closeButton = Document.querySelector(".close");
-
-
-function openPopup() {
-    document.getElementById("popupSerie").style.display = "block";
-}
-    
-function closePopup() {
-    document.getElementById("popupSerie").style.display = "none";
-}
-
-openButton.addEventListener("onClick",event =>{
-    event.preventDefault();
-    openPopup();
-})
-closeButton.addEventListener("onClick",event =>{
-    event.preventDefault();
-    closePopup();
-})
+        
 //fetch("https://api.tvmaze.com/shows?page=0").then(data => data.json()).then(console.log)

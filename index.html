@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prototype page</title>
+    <title>Mega projet trop cool</title>
     <script src="build/main.bundle.js" defer></script>
-    <link rel="stylesheet" href="./src/css/main.css">
-    <link rel="stylesheet" href="./src/css/leftMenu.css">
-    <link rel="stylesheet" href="./src/css/content.css">
-    <link rel="stylesheet" href="./src/css/popup.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/leftMenu.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href='./css/cards.css'>
+    <link rel="stylesheet" href="./css/popup.css">
+
+    <script src="https://kit.fontawesome.com/a3b7b53b76.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+
     <div class="leftMenu">
         <div class="userInfo">
             <img src="./img/logo_app.png" class="logoSize">
@@ -18,23 +22,30 @@
         </div>
         <!-- add :after for the separator -->
         <div class="leftMenuLinks nowrap hideOnHover">
-            <ul>
+            <ul class="menu">
                 <li>
-                    <a href="#">
-                        <img src="./img/logo_app.png" class="logoSize">
-                        <h3>Dernière sortie</h3>
+                    <a href="/">
+                        <div>
+                            <i class="fa-solid fa-house fa-2x"></i>
+                        </div>
+                        <h3>Accueil</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./img/logo_app.png" class="logoSize">
-                        <h3>Planning des sorties</h3>
+                    <a href="/favoris">
+                        <div>
+                            <i class="fa-solid fa-heart fa-2x"></i>
+                        </div>
+                        <h3>Favoris</h3>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./img/logo_app.png" class="logoSize">
-                        <h3>Des trucs en plus</h3>
+                    <a href="/equipe">
+                        <div>
+                            <i class="fa-solid fa-user-group fa-2x"></i>
+                        </div>
+
+                        <h3>Équipe</h3>
                     </a>
                 </li>
             </ul>
@@ -49,14 +60,14 @@
     </div>
 
     <div class="root">
+
         <header>
             <h1 id="title"></h1>
-            <form class="searchbarForm">
-                <input type="text">
-                <button type="submit">Chercher</button>
-            </form>
+            <div class="formContent">
+
+            </div>
         </header>
-    
+
         <main id="content">
 
         </main>
@@ -64,7 +75,7 @@
         <div class="popup_container">
 
         </div>
-    
+
     </div>
 
     <div class="black"></div>

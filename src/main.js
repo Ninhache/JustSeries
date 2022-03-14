@@ -1,73 +1,44 @@
-import Title from './Title';
-import TvMazeRequester from "./api/TvMazeRequester"
-import PrototypeCard from "./PrototypeCard"
+import { Router } from "./Router";
+import { HomePage } from "./pages/HomePage";
+import { FavoriPage } from "./pages/FavoriPage";
+import { TeamPage } from "./pages/TeamPage";
+import { ResultPage } from "./pages/ResultPage";
 
-import { ExemplePage } from "./pages/ExemplePage"
-import { MainPage } from "./pages/MainPage"
+import PrototypeSearchBar from './PrototypeSearchBar';
 
-// Initialise and input default value to the page
+const homePage = new HomePage();
+const favPage = new FavoriPage();
+const teamPage = new TeamPage();
+const Results = new ResultPage();
 
-const request = new TvMazeRequester();
-const content = [];
-const tmpContent = [];
-const main = document.querySelector("#content")
-
-let str = "";
-
-
-
-
-//document.getElementById("content").innerHTML = MainPage();
+if (!localStorage.favs_id) {
+	localStorage.setItem("favs_id", JSON.stringify([]));
+}
 
 
+Router.menuElement = document.querySelector('.menu');
+Router.titleElement = document.querySelector(".root > header > #title");
+Router.contentElement = document.querySelector(".root > #content");
 
-// handle search bar
-
-const searchForm = document.querySelector("body > .root > header > form");
-const searchInputText = document.querySelector("body > .root > header > form > input[type=text]");
-const searchButton = document.querySelector("body > .root > header > form > button");
-
-searchForm.addEventListener("submit", event => {
-    event.preventDefault();
-    console.log(event)
-})
-
-
-searchInputText.addEventListener("keyup", event => {
-    //request.stop();
-    
-    if(searchInputText.value.length === 0) {
-        request.getPage(0)
-        .then(data => data.json())
-        .then(data => {
-            document.getElementById("content").innerHTML = ""
-            data.forEach(element => {
-                document.getElementById("content").appendChild(new PrototypeCard(element).render());
-            });
-
-        });
-    } else {
-        request.getByName(searchInputText.value)
-        .then(data => data.json())
-        .then(data => {
-            document.getElementById("content").innerHTML = ""
-            data.forEach(element => {
-                document.getElementById("content").appendChild(new PrototypeCard(element.show).render());
-            });
-
-        });
-    }
-})
+Router.routes = [ // set all pages
+	{path: '/', page: homePage, title: "Work in progress ...", windowTitle: "JustSeries"},
+	{path: '/favoris', page: favPage, title: "Series you like, I think...", windowTitle: "Favorites"},
+	{path: '/equipe', page: teamPage, title: "Our team", windowTitle: "Project's members"},
+	{path: '/search', page: Results, title: "TestTitre" , windowTitle: "Search-Page"}
+];
 
 
-request.getPage(0)
-        .then(data => data.json())
-        .then(data => {
-            document.getElementById("content").innerHTML = ""
-            data.forEach(element => {
-                document.getElementById("content").appendChild(new PrototypeCard(element).render());
-            });
+Router.navigate(document.location.pathname + document.location.search); // get full url and move to
 
-        });
-        
-//fetch("https://api.tvmaze.com/shows?page=0").then(data => data.json()).then(console.log)
+window.onpopstate = () => {
+	Router.navigate(document.location.pathname, false);
+};
+
+
+
+/*
+* FIND A BETTER WAY MAYBE .......
+* */
+// Display search bar
+document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
+

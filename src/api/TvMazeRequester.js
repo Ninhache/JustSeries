@@ -85,7 +85,7 @@ export default class TvMazeRequester extends RequestHandler {
     getEpisodeByIdDate(id, date) {
         return fetch(`${this.baseUrl}/shows/${id}/episodesbydate?date=${date}`, {signal: this.controller.signal});
     }
-    
+
     getCastingById(id) {
         return fetch(`${this.baseUrl}/shows/${id}/cast`, {signal: this.controller.signal});
     }

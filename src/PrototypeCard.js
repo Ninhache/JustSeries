@@ -64,7 +64,7 @@ export default class PrototypeCard {
 
         divTop.innerHTML = `<h3>${this.name}</h3>
         <h4>${this.element.premiered}</h4>
-        <img src=${this.image} width="150" height="150">`
+        <img src=${this.image}>`
 
         const underCard = document.createElement("div");
         underCard.innerHTML = `<h6 class="underCard">${this.element.summary}</h6>`

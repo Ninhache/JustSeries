@@ -36,14 +36,29 @@ export default class PrototypePopup {
         <p>${this.language}</p>
         `
         
+
+        function closeOnClick(event){
+            // event.stopPropagation();
+            event.preventDefault();
+            document.querySelector(".popup_container").hidden = true;
+            document.querySelector("body").style.overflow="auto";
+        }
+
         const closeButton = document.createElement("button");
         closeButton.innerHTML="close";
         closeButton.addEventListener("click",event =>{
-                event.preventDefault();
-                document.querySelector(".popup_container").hidden = true;
-
+            // event.stopPropagation();
+            closeOnClick(event);
         })
         div.appendChild(closeButton);
+      
+        document.querySelector(".popup_container").addEventListener("click",event =>{
+            if(event.target.attributes.class.value !== 'popup') {
+                closeOnClick(event);
+            }
+            
+        })
+        
         
         return div;
     }

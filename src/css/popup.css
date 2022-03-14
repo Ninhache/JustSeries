@@ -1,11 +1,19 @@
 .popup {
-    display: none;
-    position: fixed;
-    left: 45%;
-    top: 5%;
-    transform: translate(-45%, 5%);
-    border: 2px solid #666;
-    z-index: 9;
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    height: 80%;
+    position: relative;
+    
+    transition: all 5s ease-in-out;
+}
+
+.popup_container{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 

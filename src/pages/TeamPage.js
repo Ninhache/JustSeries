@@ -1,9 +1,16 @@
 import {Page} from "./Page";
+import {TeammateCard} from "../Card/TeammateCard";
+import team from "../team";
 
 export class TeamPage extends Page{
 
     render() {
-        return "Best team ever";
+        let res = "";
+        team.forEach( teammate => {
+            res += new TeammateCard(teammate).render();
+        });
+
+        return `<div class="team">${res}</div>`;
     }
 
 }

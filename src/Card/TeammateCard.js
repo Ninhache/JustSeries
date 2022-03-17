@@ -1,4 +1,4 @@
-import PrototypeCard from "../PrototypeCard";
+import TvMazeRequester from "../api/TvMazeRequester";
 
 export class TeammateCard {
 
@@ -11,16 +11,26 @@ export class TeammateCard {
     }
 
     render() {
-        // todo : faire un element html
-        return /* html */ ` 
-            <div class="teammate">
-                <div>
-                    <span class="lastname">${this.lastname}</span>
-                    <span class="firstname">${this.firstname}</span>
-                </div>
-                <div class="surname">${this.surname}</div>
-                <div class="serieFav">${new PrototypeCard({"id" : this.favoriteSeries}).render()}</div>
+        let mateDiv = document.createElement("div");
+        mateDiv.classList.add("teammate");
+
+        mateDiv.innerHTML = /* html */ `
+            <div class="iddentity">
+                <h1 class="surname">${this.surname}</h1>
+                A.K.A            
+                <div class="fullname"><i>${this.lastname} ${this.firstname}</i></div>
+            </div>
+            <div class="serieFav">
+                <h3 id="${this.favoriteSeries.id}">${this.favoriteSeries.name}</h3>
+                <img src="${this.favoriteSeries.img}" alt="${this.favoriteSeries.name} image">
             </div>`;
+
+        mateDiv.querySelector(".serieFav").addEventListener( "click", (event) => {
+            event.preventDefault();
+            console.log(this.favoriteSeries.id); // todo : show details ? (pop_up may be)
+        })
+
+        return mateDiv;
     }
 
 }

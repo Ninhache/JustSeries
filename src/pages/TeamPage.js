@@ -5,13 +5,17 @@ import team from "../team.json"
 
 export class TeamPage extends Page{
 
-    render() {
-        let res = "";
-        team.forEach( teammate => {
-            res += new TeammateCard(teammate).render();
-        });
+    mount(element) {
+        const teamContainer = element.querySelector(".team");
+        teamContainer.innerHTML = "";
 
-        return `<div class="team">${res}</div>`;
+        team.forEach( teammate => {
+             teamContainer.appendChild(new TeammateCard(teammate).render());
+        });
+    }
+
+    render() {
+        return `<div class="team">Nice team here ! ... they coming soon</div>`;
     }
 
 }

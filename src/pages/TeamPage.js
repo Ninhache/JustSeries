@@ -1,6 +1,7 @@
 import {Page} from "./Page";
 import {TeammateCard} from "../Card/TeammateCard";
-import team from "../team";
+
+import team from "../team.json"
 
 export class TeamPage extends Page{
 

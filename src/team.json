@@ -1,0 +1,36 @@
+[
+  {
+    "lastname" : "BOUSSERT",
+    "firstname" : "Ambre",
+    "surname" : "Asydae",
+    "favoriteSeries" : {
+      "id" : 541,
+      "name" : "Prison Break",
+      "img" : "https://static.tvmaze.com/uploads/images/medium_portrait/104/261034.jpg"
+    },
+    "note" : 0
+  },
+  {
+    "lastname" : "ALMEIDA",
+    "firstname" : "Néo",
+    "surname" : "Ninhache",
+    "favoriteSeries" : {
+      "id" : 1871,
+      "name" : "Mr. Robot",
+      "img" : "https://static.tvmaze.com/uploads/images/medium_portrait/211/528026.jpg"
+    },
+    "note" : "0"
+  },
+  {
+    "lastname" : "COLLIN",
+    "firstname" : "Eliott",
+    "surname" : "FishMan",
+    "favoriteSeries" : {
+      "id" : 10,
+      "name" : "Grim",
+      "img" : "https://static.tvmaze.com/uploads/images/medium_portrait/69/174906.jpg"
+    },
+    "note" : 0
+  }
+]
+

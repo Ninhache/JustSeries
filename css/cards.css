@@ -17,8 +17,34 @@
 }
 
 .card {
-    width: 20%;
-    margin: auto;
+    width: 23%;
+    margin: 1% 0%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    /*background-color: rgb(175, 91, 159);*/
+    /*background-color: rgb(132, 98, 58);*/
+    background-color: rgb(63, 110, 122);
+
+
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+    transform: rotate3d(1, -1, 0.5, 30deg);
+    transition: 2s;
+}
+
+.card:hover {
+    transform: rotate3d(0, 0, 0, 0);
+    transition: 2s;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+.card .headerCard {
+    background-color: rgba(0, 0, 0, 0);
+    /*background: linear-gradient(rgba(0, 0, 0, 0), rgb(175, 91, 159));*/
 }
 
 .cardShow > .cardShowBottom {
@@ -52,32 +78,14 @@
     animation-fill-mode: forwards;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/************/
 
 .cardInfo {
     display: flex;
     justify-content: space-evenly;
-    background-color: aqua;
+    background-color: rgba(0, 0, 0, 0);
+
+    /*background-color: rgb(175, 91, 159);*/
 }
 
 .cardInfo > div {
@@ -89,11 +97,7 @@
     margin-left: 3px;
 }
 
-.card {
-    padding: 5px;
-    position: relative;
-    overflow-y: hidden;
-}
+
 
 .card:hover .underCard {
     background: rgba(115,115,225,0.5);

@@ -62,9 +62,12 @@ export default class PrototypeCard {
             console.log("TU KIFF LA SERIE" + this.name);
         })
 
-        divTop.innerHTML = `<h3>${this.name}</h3>
-        <h4>${this.element.premiered}</h4>
-        <img src=${this.image}>`
+        divTop.innerHTML = /* html */ `
+                <div class="headerCard">
+                    <h3>${this.name}</h3>  
+                    <h4>${this.element.premiered}</h4>
+                </div>
+                <img src=${this.image}>`;
 
         const underCard = document.createElement("div");
         underCard.innerHTML = `<h6 class="underCard">${this.element.summary}</h6>`

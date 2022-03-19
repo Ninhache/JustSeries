@@ -29,12 +29,9 @@
 }
 
 body {
-    z-index: -1;
-}
+	background-color: rgb(132, 260, 255);
 
-a {
-    text-decoration: none;
-    color: black;
+    z-index: -1; /* useless no ? */
 }
 
 ul, li {

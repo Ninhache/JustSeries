@@ -4,7 +4,7 @@
 .leftMenu {
     width: 80px;
     height: 100%;
-    background-color: red;
+    background-color: rgb(63, 110, 122);
     position: fixed;
     z-index: 200;
     display: flex;
@@ -64,8 +64,23 @@
     animation-fill-mode: forwards;
 }
 
-.menu > li > a > div > i {
+.menu > li > a {
     margin: 22px;
+
+    text-decoration: none;
+    color: rgb(91, 159, 175);
+    transition: 0.5s;
+
+}
+
+.menu > li > a:hover {
+    text-decoration: none;
+    color: rgb(132, 260, 255);
+    transition: 0.5s;
+}
+
+.menu > li > a > div > i {
+    padding-right: 30px;
     width: 40px;
     height: 40px;
 }

@@ -3,14 +3,21 @@
 
 
 .root {
-    background-color: rgb(91, 159, 175);
+    /*background-color: rgb(91, 159, 175);*/
     height: 100%;
     min-height: 400px;
     z-index: -5;
+
     padding-left: 100px;
+    padding-bottom: 50px;
+
+    margin: auto;
 }
 
 #content {
     display: flex;
     flex-wrap: wrap;
+
+    padding-left: 50px;
+    padding-right: 50px;
 }

@@ -18,6 +18,7 @@
 
 .card {
     width: 20%;
+    margin: auto;
 }
 
 .cardShow > .cardShowBottom {

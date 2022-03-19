@@ -29,8 +29,10 @@
 }
 
 body {
-	background-color: rgb(132, 260, 255);
-
+	background-color: rgb(91, 159, 175);
+	position: absolute;
+	min-height: 100%;
+	min-width: 100%;
     z-index: -1; /* useless no ? */
 }
 

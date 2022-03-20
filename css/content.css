@@ -6,6 +6,9 @@
 .root > header > h1 {
     text-align: center;
     font-weight: bold;
+
+    color: #1B4B65;
+    font-size: 5em;
 }
 
 #content {

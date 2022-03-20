@@ -23,7 +23,7 @@ export class Router {
         if (route) {
             if (pushState) window.history.pushState(null, null, path);
             document.title = route.windowTitle;
-            this.titleElement.innerHTML = `<h1>${route.title}</h1>`;
+            this.titleElement.innerHTML = `${route.title}`;
             this.contentElement.innerHTML = route.page?.render();
             route.page?.mount(this.contentElement);
         } else {

@@ -29,7 +29,14 @@ export class Router {
             route.page?.mount(this.contentElement);
         } else {
             this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;
-            this.contentElement.innerHTML = "WTF you doing here ?? go back your home";
+            this.contentElement.innerHTML = "WTF you doing here ?? go back (y)our home";
         }
     }
+
+    static redisplay() {
+        const currentPage = this.routes.find( route => route.path === window.location.pathname);
+        // todo : do something if page is undefined
+        currentPage.page?.redisplay(this.contentElement);
+    }
+
 }

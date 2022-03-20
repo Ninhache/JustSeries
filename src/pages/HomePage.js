@@ -1,10 +1,17 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
 import PrototypeCard from "../PrototypeCard";
+import {Sorter} from "../Sorter";
 
 export class HomePage extends Page {
 
+    result = [];
+
     render() {
+        // reset sorting property at default value
+        document.querySelector(".formContainer .sorting .sorting_direction").selectedIndex = null;
+        document.querySelector(".formContainer .sorting .sorting_by").selectedIndex = null;
+
         return "<span class='wait'>Wait a moment plz </span>";
     }
 
@@ -25,11 +32,25 @@ export class HomePage extends Page {
             .then(data => data.json())
             .then(data => this.randomize(data))
             .then(data => {
+                this.result = data; // keep the result for sorting
+
                 element.innerHTML = "";
+
                 for (let i = 0; i < 16; i++) {
                     this.element.appendChild(new PrototypeCard(data[i]).render());
                 }
             })
 
     }
+
+    redisplay(element) {
+        super.redisplay();
+        this.result = Sorter.sort_array(this.result);
+        element.innerHTML = "";
+
+        for (let i = 0; i < 16; i++) {
+            this.element.appendChild(new PrototypeCard(this.result[i]).render());
+        }
+    }
+
 }

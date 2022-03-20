@@ -62,7 +62,7 @@ export default class PrototypeCard {
 
         divTop.innerHTML = /* html */ `
                 <div class="headerCard">
-                    <h3>${this.name}</h3>  
+                    <h3 title="${this.name}">${this.name}</h3>  
                     <h4>${this.element.premiered || "Unknown"}</h4>
                 </div>
                 <img src=${this.image}>`;

@@ -5,7 +5,6 @@ export class Sorter {
     }
 
     static sort_array(data) {
-        console.log("sort by " + this.sorting.by);
 
         data = data.sort( (a, b) => {
             a = a[this.sorting.by];
@@ -21,7 +20,6 @@ export class Sorter {
             else return  0;
         });
 
-        console.log("sort direction " + this.sorting.direction);
         return this.sorting.direction==="ASC"?data:data.reverse();
     }
 

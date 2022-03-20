@@ -29,17 +29,10 @@ Router.routes = [ // set all pages
 ];
 
 
-
-
-
-
-/*
-* FIND A BETTER WAY MAYBE .......
-* */
 // Display search bar
-const formContainer = document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
+document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
 
-
+document.querySelector(".userInfo").addEventListener("click", () => Router.navigate("/") );
 
 // navigate when all is load
 Router.navigate(document.location.pathname + document.location.search); // get full url and move to

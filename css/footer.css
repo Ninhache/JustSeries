@@ -6,4 +6,15 @@
 
     background-color: #709CA7;
     z-index: 50;
+    height: 5%;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #BEE9E7;
+}
+
+.footer a:hover {
+    color: #9be5df;
+    text-decoration: underline;
 }

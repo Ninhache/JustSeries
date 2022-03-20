@@ -42,10 +42,6 @@ export class HomePage extends Page {
                 }
             });
 
-        document.querySelector(".userInfo").addEventListener("click", event => {
-            Router.navigate("/");
-        });
-
     }
 
     redisplay(element) {

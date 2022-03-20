@@ -1,9 +1,7 @@
 export class Page {
     element;
 
-    redisplay() {
-        console.log("redisplay ? ");
-    }
+    redisplay() { }
 
     mount(element) {
         this.element = element;

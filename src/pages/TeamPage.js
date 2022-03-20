@@ -1,5 +1,5 @@
 import {Page} from "./Page";
-import {TeammateCard} from "../Card/TeammateCard";
+import {TeammateCard} from "../Component/TeammateCard";
 
 import team from "../team.json"
 

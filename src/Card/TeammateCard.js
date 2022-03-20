@@ -23,6 +23,9 @@ export class TeammateCard {
             <div class="serieFav">
                 <h3 id="${this.favoriteSeries.id}">${this.favoriteSeries.name}</h3>
                 <img src="${this.favoriteSeries.img}" alt="${this.favoriteSeries.name} image">
+            </div>
+            <div class="implication_container">
+                <div class="percentage" style="width: ${this.note}%">${this.note} %</divclass>
             </div>`;
 
         mateDiv.querySelector(".serieFav").addEventListener( "click", (event) => {

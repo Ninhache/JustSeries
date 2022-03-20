@@ -9,18 +9,14 @@ export default class PrototypeSearchBar {
         
         form.innerHTML = `<form class="searchbarForm">
                                 <input type="text">
-                                <button type="submit">Chercher</button>
+                                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>`
 
         const searchInputText = form.querySelector("input[type=text]");
 
         form.addEventListener("submit", event => {
             event.preventDefault();
-            if(searchInputText.value.length === 0) {
-                
-            } else {
-                Router.navigate(`/search?q=${searchInputText.value}`);
-            }
+            Router.navigate(`/search?q=${searchInputText.value}`);
         })
 
         return form;

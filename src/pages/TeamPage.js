@@ -40,8 +40,10 @@ export class TeamPage extends Page{
     render() {
         return `<div class="team_scene">
                     <div class="team_carousel">Nice team here ! ... they coming soon</div>
-                    <button class="turnLeft"><i class="fa-solid fa-angle-left"></i></button>
-                    <button class="turnRight"><i class="fa-solid fa-angle-right"></i></button>
+                    <div class="teamCarouselController">
+                        <button class="turnLeft"><i class="fa-solid fa-angle-left"></i></button>
+                        <button class="turnRight"><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
                 </div>`;
     }
 

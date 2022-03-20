@@ -25,6 +25,7 @@ export class Router {
             document.title = route.windowTitle;
             this.titleElement.innerHTML = `${route.title}`;
             this.contentElement.innerHTML = route.page?.render();
+            this.contentElement.className = route.path.substring(1); // change conteElement class for each page
             route.page?.mount(this.contentElement);
         } else {
             this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;

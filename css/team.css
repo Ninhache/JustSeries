@@ -7,6 +7,8 @@
     height: 500px;
     position: relative;
     perspective: 1000px;
+
+    margin-top: 5%;
 }
 
 .team_carousel {
@@ -15,41 +17,52 @@
     position: absolute;
     transform-style: preserve-3d;
 
-    transform: translateZ(-288px);
     transition: 1s;
 }
 
-.teammate { /* todo : change size */
+.teammate {
     position: absolute;
     width: 300px;
     height: 400px;
     left: 10px;
     top: 10px;
 
-    border: 2px solid red;
+    border: 2px solid rgb(0, 91, 187);
     text-align: center;
+
+    background-color: rgba(10, 80, 147, 0.79);
+    color: #BEE9E7;
 }
 
-.teammate:nth-child(1) { transform: rotateY(  0deg) translateZ(288px);  background-color: rgba(255, 0, 0, 0.5); }
-.teammate:nth-child(2) { transform: rotateY(120deg) translateZ(288px);  background-color: rgba(0, 255, 0, 0.5); }
-.teammate:nth-child(3) { transform: rotateY(240deg) translateZ(288px);  background-color: rgba(0, 0, 255, 0.5); }
+.teammate:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
+.teammate:nth-child(2) { transform: rotateY(120deg) translateZ(288px); }
+.teammate:nth-child(3) { transform: rotateY(240deg) translateZ(288px); }
 
+.teammate .serieFav img {
+    border: 2px solid black;
+}
 
-.teamCarouselController {
+.teamCarouselController button {
     position: absolute;
-    bottom: 0;
-    padding: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    right: -15px;
+    top: 35%;
+
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid white;
+
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+}
+
+.turnLeft {
+    left: -60%;
+}
+
+.turnRight {
+    right: -60%;
 }
 
 .turnLeft, .turnRight {
     padding: 10px;
 }
-
-/*
-.team_scene button:nth-child(2) {
-    left: 15px;
-}*/

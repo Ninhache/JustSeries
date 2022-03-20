@@ -9,7 +9,7 @@ export class TeamPage extends Page{
 
     rotateCarousel() {
         const angle = this.selectedIndex / 3 * -360;
-        this.element.querySelector(".team_carousel").style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
+        this.element.querySelector(".team_carousel").style.transform = 'rotateY(' + angle + 'deg)';
     }
 
     mount(element) {

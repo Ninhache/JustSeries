@@ -1,6 +1,7 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
 import PrototypeCard from "../PrototypeCard";
+import { Router } from "../Router";
 
 export class HomePage extends Page {
 
@@ -29,7 +30,11 @@ export class HomePage extends Page {
                 for (let i = 0; i < 16; i++) {
                     this.element.appendChild(new PrototypeCard(data[i]).render());
                 }
-            })
+            });
+        
+        document.querySelector(".userInfo").addEventListener("click", event => { 
+            Router.navigate("/");
+        });
 
     }
 }

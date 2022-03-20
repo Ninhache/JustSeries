@@ -13,7 +13,6 @@ export class Router {
               link.addEventListener('click', (event) => {
                   event.preventDefault();
                   Router.navigate(path);
-                  console.log("go to : " + path);
               })
           });
     }

@@ -1,8 +1,6 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import Card from "../Card";
 import PrototypeCard from "../PrototypeCard";
-import { favIsEmpty } from "../FavoriteHandler";
 
 export class FavoriPage extends Page{
 
@@ -37,7 +35,7 @@ export class FavoriPage extends Page{
                 element.querySelector(".wait")?.classList.remove("wait");
             })
         } else {
-            element.innerHTML = "<h3>Pas de favoris ...</h3>"
+            element.innerHTML = "<h3>Click on the heart near a serie to add it in favorites</h3>"
         }
         
         

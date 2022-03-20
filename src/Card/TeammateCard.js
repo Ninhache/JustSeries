@@ -27,7 +27,6 @@ export class TeammateCard {
 
         mateDiv.querySelector(".serieFav").addEventListener( "click", (event) => {
             event.preventDefault();
-            console.log(this.favoriteSeries.id); // todo : show details ? (pop_up may be)
         })
 
         return mateDiv;

@@ -1,6 +1,5 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import Card from "../Card";
 import PrototypeCard from "../PrototypeCard";
 import { favIsEmpty } from "../FavoriteHandler";
 import {Sorter} from "../Sorter";
@@ -42,11 +41,11 @@ export class FavoriPage extends Page{
                 }
             });
 
-            favToFetch.forEach(id => 
+            favToFetch.forEach(id =>
                 promiseArray.push(request.getById(id).then(response => response.json()))
             );
             
-            Promise.allSettled(promiseArray).then((values) => {
+            Promise.allSettled(promiseArray).then((values) => {
                 values.forEach(item => {
                     this.result.push(item.value);
                 })
@@ -58,7 +57,7 @@ export class FavoriPage extends Page{
                 element.querySelector(".wait")?.classList.remove("wait");
             })
         } else {
-            element.innerHTML = "<h3>Pas de favoris ...</h3>"
+            element.innerHTML = "<h3>Click on the heart near a serie to add it in favorites</h3>"
         }
     }
 

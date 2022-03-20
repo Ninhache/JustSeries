@@ -31,7 +31,7 @@ class ResultPage extends Page {
 
                 element.innerHTML = "";
                 if(data.length === 0)  {
-                        element.innerHTML = "<h3>Recherche non valide</h3>"
+                        element.innerHTML = `<h3>"<u>${this.query}</u>" isn't in <a href="https://www.tvmaze.com/api" target="_blank">TvMaze API</a>, sorry for you.</h3>`
                 } else {
                     data = Sorter.sort_array(data);
 

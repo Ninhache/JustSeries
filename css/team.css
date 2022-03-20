@@ -4,10 +4,6 @@
     height: 500px;
     position: relative;
     perspective: 1000px;
-    border: 2px solid grey;
-
-    margin: 15% auto ;
-
 }
 
 .team_carousel {
@@ -35,13 +31,22 @@
 .teammate:nth-child(2) { transform: rotateY(120deg) translateZ(288px);  background-color: rgba(0, 255, 0, 0.5); }
 .teammate:nth-child(3) { transform: rotateY(240deg) translateZ(288px);  background-color: rgba(0, 0, 255, 0.5); }
 
-.team_scene button {
+
+.teamCarouselController {
     position: absolute;
     bottom: 0;
-    right: 15px;
     padding: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    right: -15px;
 }
 
+.turnLeft, .turnRight {
+    padding: 10px;
+}
+
+/*
 .team_scene button:nth-child(2) {
     left: 15px;
-}
+}*/

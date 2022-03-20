@@ -1,5 +1,7 @@
 import { addToFav, removeFromFav, isInFav } from "./FavoriteHandler";
 
+//const url = require('../images/no_image.png');
+
 export default class PrototypeCard {
 
     constructor(element) {
@@ -8,7 +10,7 @@ export default class PrototypeCard {
         this.name = element.name;
         this.image = element.image?.medium;
         if(this.image == undefined) {
-            this.image = "https://media.discordapp.net/attachments/624976021417885707/949465775146688512/unknown.png"
+            this.image = "https://media.discordapp.net/attachments/801526575686221874/955075126259490886/no_image.png";
         }
 
         this.fav = isInFav(this.id);
@@ -22,7 +24,7 @@ export default class PrototypeCard {
 
         divTop.style.cursor = "pointer"; // todo : move to css
         divTop.addEventListener("click", event => {
-            console.log(this.id);
+            
         })
         divTop.classList.add("cardShow")
 
@@ -39,7 +41,7 @@ export default class PrototypeCard {
         const textNote = document.createElement("h6");
             starDiv.appendChild(iStar);
             starDiv.appendChild(textNote);
-            textNote.innerText = `${this.element.rating?.average}/10`;
+            textNote.innerText = `${this.element.rating?.average || "?"}/10`;
 
         if (this.fav) iHeart.classList.add("fav");
 
@@ -58,16 +60,15 @@ export default class PrototypeCard {
             }
         })
 
-        iStar.addEventListener("click", event => {
-            console.log("TU KIFF LA SERIE" + this.name);
-        })
-
-        divTop.innerHTML = `<h3>${this.name}</h3>
-        <h4>${this.element.premiered}</h4>
-        <img src=${this.image}>`
+        divTop.innerHTML = /* html */ `
+                <div class="headerCard">
+                    <h3>${this.name}</h3>  
+                    <h4>${this.element.premiered || "Unknown"}</h4>
+                </div>
+                <img src=${this.image}>`;
 
         const underCard = document.createElement("div");
-        underCard.innerHTML = `<h6 class="underCard">${this.element.summary}</h6>`
+        underCard.innerHTML = `<h6 class="underCard">${this.element.summary || "No description"}</h6>`
 
         divTop.appendChild(underCard)
 

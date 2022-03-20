@@ -11,19 +11,19 @@ export default class PrototypeSearchBar {
 
         formContainer.innerHTML = `<form class="searchbarForm">
                                 <input type="text">
-                                <button type="submit">Chercher</button>
+                                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                             <div class="sorting">
                                 <select name="sorting_direction" class="sorting_direction">
                                     <option value="undefined" selected hidden>undefined</option>
-                                    <option value="ASC">Ascendant</option>
-                                    <option value="DESC">Descendant</option>
+                                    <option value="ASC">Ascending</option>
+                                    <option value="DESC">Descending</option>
                                 </select>
                                 <select name="sorting_by" class="sorting_by">
                                     <option value="undefined" selected hidden>undefined</option>
-                                    <option value="name">Nom de la série</option>
-                                    <option value="premiered">Date de sortie</option>
-                                    <option value="rating">Note</option>
+                                    <option value="name">Series name</option>
+                                    <option value="premiered">First broadcast</option>
+                                    <option value="rating">Rating</option>
                                 </select>
                             </div>`;
 
@@ -31,11 +31,7 @@ export default class PrototypeSearchBar {
 
         formContainer.addEventListener("submit", event => {
             event.preventDefault();
-            if(searchInputText.value.length === 0) {
-                
-            } else {
-                Router.navigate(`/search?q=${searchInputText.value}`);
-            }
+            Router.navigate(`/search?q=${searchInputText.value}`);
         })
 
         const sorting_direction = formContainer.querySelector(".sorting_direction");

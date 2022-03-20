@@ -47,9 +47,9 @@
     cursor: pointer;
 }
 
-.formContent .sorting {
+/*.formContent .sorting {
     text-align: center;
-}
+}*/
 
 .formContent .sorting  select {
     width: 20%;

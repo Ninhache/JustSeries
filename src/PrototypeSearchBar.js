@@ -9,7 +9,8 @@ export default class PrototypeSearchBar {
         const formContainer = document.createElement("div");
         formContainer.classList.add("formContainer");
 
-        formContainer.innerHTML = `<form class="searchbarForm">
+        formContainer.innerHTML = `
+                            <form class="searchbarForm">
                                 <input type="text">
                                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>

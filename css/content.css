@@ -17,25 +17,30 @@
     margin-bottom: 100px;
 }
 
-.formContent > form {
+.formContent{
     display: flex;
     justify-content: center;
 }
 
-.formContent > form > input {
+
+.formContent > .formContainer {
+    width: 50%;
+}
+
+.formContent > .formContainer > .searchbarForm > input {
     border: none;
     border-radius: 2rem 0 0 2rem;
     padding: 10px;
-    width: 25%;
+    width: 80%;
 }
 
-.formContent > form > button {
+.formContent > .formContainer > .searchbarForm > button {
     border: none;
     border-radius: 0 2rem 2rem 0;
     background-color: #1B4B65;
     color: white;
     font-weight: bold;
     padding: 10px 30px;
-    
+
     cursor: pointer;
 }

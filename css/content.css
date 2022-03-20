@@ -43,3 +43,18 @@
 
     cursor: pointer;
 }
+
+.formContent .sorting {
+    text-align: center;
+}
+
+.formContent .sorting  select {
+    width: 20%;
+    margin: 2% 4%;
+    padding: 5px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #1B4B65;
+    color: white;
+}

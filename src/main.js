@@ -5,6 +5,7 @@ import { TeamPage } from "./pages/TeamPage";
 import { ResultPage } from "./pages/ResultPage";
 
 import PrototypeSearchBar from './PrototypeSearchBar';
+import {Sorter} from "./Sorter";
 
 const homePage = new HomePage();
 const favPage = new FavoriPage();
@@ -21,18 +22,14 @@ Router.titleElement = document.querySelector(".root > header > #title");
 Router.contentElement = document.querySelector(".root > #content");
 
 Router.routes = [ // set all pages
-	{path: '/', page: homePage, title: "Work in progress ...", windowTitle: "JustSeries"},
-	{path: '/favoris', page: favPage, title: "Series you like, I think...", windowTitle: "Favorites"},
+	{path: '/', page: homePage, title: "JustSeries", windowTitle: "JustSeries"},
+	{path: '/favoris', page: favPage, title: "Series you liked", windowTitle: "Favorites"},
 	{path: '/equipe', page: teamPage, title: "Our team", windowTitle: "Project's members"},
-	{path: '/search', page: Results, title: "TestTitre" , windowTitle: "Search-Page"}
+	{path: '/search', page: Results, title: "Searching Page" , windowTitle: "Search-Page"}
 ];
 
 
-Router.navigate(document.location.pathname + document.location.search); // get full url and move to
 
-window.onpopstate = () => {
-	Router.navigate(document.location.pathname, false);
-};
 
 
 
@@ -40,9 +37,17 @@ window.onpopstate = () => {
 * FIND A BETTER WAY MAYBE .......
 * */
 // Display search bar
-document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
+const formContainer = document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
+
 
 /**
  * POPUP
  */
 document.querySelector(".popup_container").hidden=true;
+
+// navigate when all is load
+Router.navigate(document.location.pathname + document.location.search); // get full url and move to
+
+window.onpopstate = () => {
+	Router.navigate(document.location.pathname, false);
+};

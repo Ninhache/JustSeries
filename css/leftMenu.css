@@ -1,13 +1,10 @@
-@keyframes transitionBroken {
-    0% {background-color: rgba(0,0,0,0);}
-    100% {background-color: rgba(0,0,0,.5);}
-}
+
 
 
 .leftMenu {
     width: 80px;
     height: 100%;
-    background-color: red;
+    background-color: #1B4B65;
     position: fixed;
     z-index: 200;
     display: flex;
@@ -15,17 +12,12 @@
     justify-content: space-between;
 }
 
+
+
 .leftMenu:hover {
     width: 250px;
 
     transition: width 0.5s ease;
-}
-
-
-
-.userInfo {
-    display: flex;
-    align-items: center;
 }
 
 .logoSize {
@@ -43,7 +35,11 @@
 }
 
 .userInfo {
+    color: #d5f1f0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 
@@ -60,15 +56,31 @@
 
 .leftMenu:hover ~ .black {
     display:block;
-    z-index: 0;
+    z-index: 51;
     top: 0;
     animation-name: transitionBroken;
     animation-duration: 2000ms;
     animation-fill-mode: forwards;
 }
 
+.menu {
+    padding-left: 20px;
+}
+
+.menu > li > a {
+    text-decoration: none;
+    color: #BEE9E7;
+    transition: 0.5s;
+}
+
+.menu > li > a:hover {
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: 0.5s;
+}
+
 .menu > li > a > div > i {
-    margin: 22px;
+    padding-right: 30px;
     width: 40px;
     height: 40px;
 }

@@ -1,17 +1,63 @@
-
-
-
-
 .root {
-    background-color: rgb(183, 183, 238);
-    
-    height: 100%;
-    
-    z-index: -5;
-    padding-left: 100px;
+    padding-left: 5%;
+}
+
+
+.root > header > h1 {
+    text-align: center;
+    font-weight: bold;
+
+    color: #1B4B65;
+    font-size: 5em;
 }
 
 #content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+
+    padding: 80px;
+    margin-bottom: 100px;
+}
+
+.formContent{
+    text-align: center;
+}
+
+.formContent > .formContainer {
+    width: 100%;
+}
+
+.formContent > .formContainer > .searchbarForm > input {
+    border: none;
+    border-radius: 2rem 0 0 2rem;
+    padding: 10px;
+    width: 40%;
+}
+
+.formContent > .formContainer > .searchbarForm > button {
+    border: none;
+    border-radius: 0 2rem 2rem 0;
+    background-color: #1B4B65;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    width: 10%;
+
+    cursor: pointer;
+}
+
+.formContent .sorting {
+    text-align: center;
+}
+
+.formContent .sorting  select {
+    width: 20%;
+    margin: 2% 4%;
+    padding: 5px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #1B4B65;
+    color: white;
 }

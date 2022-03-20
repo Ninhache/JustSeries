@@ -13,7 +13,6 @@ export class Router {
               link.addEventListener('click', (event) => {
                   event.preventDefault();
                   Router.navigate(path);
-                  console.log("go to : " + path);
               })
           });
     }
@@ -24,12 +23,19 @@ export class Router {
         if (route) {
             if (pushState) window.history.pushState(null, null, path);
             document.title = route.windowTitle;
-            this.titleElement.innerHTML = `<h1>${route.title}</h1>`;
+            this.titleElement.innerHTML = `${route.title}`;
             this.contentElement.innerHTML = route.page?.render();
             route.page?.mount(this.contentElement);
         } else {
             this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;
-            this.contentElement.innerHTML = "WTF you doing here ?? go back your home";
+            this.contentElement.innerHTML = "WTF you doing here ?? go back (y)our home";
         }
     }
+
+    static redisplay() {
+        const currentPage = this.routes.find( route => route.path === window.location.pathname);
+        // todo : do something if page is undefined
+        currentPage.page?.redisplay(this.contentElement);
+    }
+
 }

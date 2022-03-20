@@ -1,28 +1,53 @@
 import { Router } from "./Router";
+import {Sorter} from "./Sorter";
 
 export default class PrototypeSearchBar {
 
     constructor() { }
 
     render() {
-        const form = document.createElement("form");
-        
-        form.innerHTML = `<form class="searchbarForm">
+        const formContainer = document.createElement("div");
+        formContainer.classList.add("formContainer");
+
+        formContainer.innerHTML = `
+                            <form class="searchbarForm">
                                 <input type="text">
-                                <button type="submit">Chercher</button>
-                            </form>`
+                                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                            <div class="sorting">
+                                <select name="sorting_direction" class="sorting_direction">
+                                    <option value="undefined" selected hidden>undefined</option>
+                                    <option value="ASC">Ascending</option>
+                                    <option value="DESC">Descending</option>
+                                </select>
+                                <select name="sorting_by" class="sorting_by">
+                                    <option value="undefined" selected hidden>undefined</option>
+                                    <option value="name">Series name</option>
+                                    <option value="premiered">First broadcast</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </div>`;
 
-        const searchInputText = form.querySelector("input[type=text]");
+        const searchInputText = formContainer.querySelector("input[type=text]");
 
-        form.addEventListener("submit", event => {
+        formContainer.addEventListener("submit", event => {
             event.preventDefault();
-            if(searchInputText.value.length === 0) {
-                
-            } else {
-                Router.navigate(`/search?q=${searchInputText.value}`);
-            }
+            Router.navigate(`/search?q=${searchInputText.value}`);
         })
 
-        return form;
+        const sorting_direction = formContainer.querySelector(".sorting_direction");
+        sorting_direction.addEventListener('change', (event) => {
+            Sorter.sorting.direction = event.target.value;
+            Router.redisplay();
+        });
+
+        const sorting_by = formContainer.querySelector(".sorting_by");
+        sorting_by.addEventListener('change', (event) => {
+            Sorter.sorting.by = event.target.value;
+            Router.redisplay();
+        });
+
+
+        return formContainer;
     }
 }

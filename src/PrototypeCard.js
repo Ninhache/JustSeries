@@ -1,7 +1,5 @@
 import { addToFav, removeFromFav, isInFav } from "./FavoriteHandler";
 
-//const url = require('../images/no_image.png');
-
 export default class PrototypeCard {
 
     constructor(element) {

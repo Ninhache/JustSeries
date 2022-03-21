@@ -1,33 +1,29 @@
 import { Router } from "./Router";
-import { HomePage } from "./pages/HomePage";
-import { FavoriPage } from "./pages/FavoriPage";
-import { TeamPage } from "./pages/TeamPage";
-import { ResultPage } from "./pages/ResultPage";
+import { HomePage, FavoriPage, TeamPage, ResultPage, ErrorPage } from "./pages/allExports";
 
 import PrototypeSearchBar from './PrototypeSearchBar';
-import {Sorter} from "./Sorter";
 
-const homePage = new HomePage();
-const favPage = new FavoriPage();
-const teamPage = new TeamPage();
-const Results = new ResultPage();
+const Homepage = new HomePage();
+const Favpage = new FavoriPage();
+const Teampage = new TeamPage();
+const Resultpage = new ResultPage();
+const Errorpage = new ErrorPage();
 
 if (!localStorage.favs_id) {
 	localStorage.setItem("favs_id", JSON.stringify([]));
 }
-
 
 Router.menuElement = document.querySelector('.menu');
 Router.titleElement = document.querySelector(".root > header > #title");
 Router.contentElement = document.querySelector(".root > #content");
 
 Router.routes = [ // set all pages
-	{path: '/', page: homePage, title: "JustSeries", windowTitle: "JustSeries"},
-	{path: '/favoris', page: favPage, title: "Series you liked", windowTitle: "Favorites"},
-	{path: '/equipe', page: teamPage, title: "Our team", windowTitle: "Project's members"},
-	{path: '/search', page: Results, title: "Searching Page" , windowTitle: "Search-Page"}
+	{path: '/', page: Homepage, title: "JustSeries", windowTitle: "JustSeries"},
+	{path: '/favoris', page: Favpage, title: "Series you liked", windowTitle: "Favorites"},
+	{path: '/equipe', page: Teampage, title: "Our team", windowTitle: "Project's members"},
+	{path: '/search', page: Resultpage, title: "Searching Page" , windowTitle: "Search-Page"},
+	{path: '/404', page: Errorpage, title: "404 Not found !" , windowTitle: "404 Not found"}
 ];
-
 
 // Display search bar
 document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());

@@ -8,13 +8,13 @@ export class Router {
         this.#menuElement = element;
 
         element.querySelectorAll('a')
-          .forEach(link => {
-              const path = link.getAttribute('href');
-              link.addEventListener('click', (event) => {
-                  event.preventDefault();
-                  Router.navigate(path);
-              })
-          });
+            .forEach(link => {
+                const path = link.getAttribute('href');
+                link.addEventListener('click', (event) => {
+                event.preventDefault();
+                Router.navigate(path);
+            })
+        });
     }
 
 
@@ -28,8 +28,7 @@ export class Router {
             this.contentElement.className = route.path.substring(1); // change conteElement class for each page
             route.page?.mount(this.contentElement);
         } else {
-            this.titleElement.innerHTML = `<h1>Error : 404 not found</h1>`;
-            this.contentElement.innerHTML = "WTF you doing here ?? go back (y)our home";
+            Router.navigate("/404")
         }
     }
 

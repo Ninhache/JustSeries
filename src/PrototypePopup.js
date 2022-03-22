@@ -7,16 +7,19 @@ export default class PrototypePopup {
         // prévoir si un attribut est undefined ..
         this.id=id;
         this.name=name;
-        this.summary = summary;
+        
+        this.summary = summary || "No description";
         this.rating = rating?.average;
-        this.premiered = premiered;
+        if(this.rating==undefined){this.rating="?"}
+        this.premiered = premiered || "unknown";
         this.genres = genres;
-        this.language = language;
-        if(language == undefined){language="unknown"}
+        if(genres.length==0){this.genres="unknown"}
+        this.language = language || "unknown";
         this.image = image?.original;
         if(this.image == undefined) {
             this.image = "https://media.discordapp.net/attachments/624976021417885707/949465775146688512/unknown.png"
         }
+        console.log(id);
         console.log(this.name);
         console.log(this.rating);
         console.log(this.premiered);
@@ -40,12 +43,14 @@ export default class PrototypePopup {
 
         details.innerHTML = `
         <h1>${this.name}</h1>
+        </br>
         <p>${this.summary}</p>
-        <p>${this.rating}</p>
-        <p>${this.premiered}</p>
-        <p>${this.genres}</p>
-        <p>${this.language}</p>
-        <h3>Five last episodes :</h3>
+        </br>
+        <p>Rating : ${this.rating}/10</p>
+        <p>Premiered : ${this.premiered}</p>
+        <p>Genres : ${this.genres}</p>
+        <p>Languages : ${this.language}</p>
+        </br>
         `
         
         // Close Button
@@ -80,6 +85,9 @@ export default class PrototypePopup {
                 if(data.length === 0)  {
                     throw new Error("L'id recherché n'est pas existant");
                 } else {
+                    const titleEpisodes = document.createElement("h3");
+                    titleEpisodes.innerHTML=`<p>Five last episodes :</p>`;
+                    details.appendChild(titleEpisodes);
                     for(let i=1;i<6;i++){
                         let item = data[data.length-i]
                         console.log(item)

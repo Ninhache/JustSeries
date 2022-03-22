@@ -7,7 +7,7 @@ export default class PrototypeEpisode {
         this.date = airdate;
         this.image = image?.medium;
         if(this.image === undefined) { this.image = "https://media.discordapp.net/attachments/624976021417885707/949465775146688512/unknown.png" }
-        this.summary = summary;
+        this.summary = summary || "No description";
     }
 
     render() {

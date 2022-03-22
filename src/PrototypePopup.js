@@ -46,21 +46,25 @@ export default class PrototypePopup {
         </br>
         `
         
-        // Close Button
+        // Close Popup
         function closeOnClick(event){
             event.preventDefault();
-            if(event.target.attributes.class.value === 'popup_container' || event.target.attributes.class.value === 'closeButton'){
-                document.querySelector(".popup_container").hidden = true;
-                document.querySelector("body").style.overflow="auto";
-                const url = document.location.search;
-                console.log(url);
-                const tab = url.split('&')
-                let i=0;
-                tab.forEach(element=>{
-                    if(element.includes("id")) tab.splice(i,1);
-                    i++;
-                })
-                window.history.pushState(null,null,window.location.pathname + tab);
+            console.log(event.target.attributes.class.value);
+            if(event.target.attributes.class!==undefined){
+                if(event.target.attributes.class.value === ('popup_container') || 
+                   event.target.attributes.class.value ===('closeButton')){
+
+                    document.querySelector(".popup_container").hidden = true;
+                    document.querySelector("body").style.overflow="auto";
+                    const url = document.location.search;
+                    const tab = url.split('&')
+                    let i=0;
+                    tab.forEach(element=>{
+                        if(element.includes("id")) tab.splice(i,1);
+                        i++;
+                    })
+                    window.history.pushState(null,null,window.location.pathname + tab);
+                }
             }
         }
         
@@ -75,10 +79,7 @@ export default class PrototypePopup {
         div.appendChild(closeButton);
       
         document.querySelector(".popup_container").addEventListener("click",event =>{
-            console.log(event.target.attributes.class.value);
             closeOnClick(event);
-            
-            
         })
 
         // Episodes
@@ -93,7 +94,6 @@ export default class PrototypePopup {
                     details.appendChild(titleEpisodes);
                     for(let i=1;i<6;i++){
                         let item = data[data.length-i]
-                        console.log(item)
                         details.appendChild(new PrototypeEpisode(item).render());
                     }
                 }

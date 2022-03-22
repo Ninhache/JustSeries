@@ -13,7 +13,7 @@ export default class PrototypePopup {
         if(this.rating==undefined){this.rating="?"}
         this.premiered = premiered || "unknown";
         this.genres = genres;
-        if(genres.length==0){this.genres="unknown"}
+        if(genres==undefined || genres.length==0){this.genres="unknown"}
         this.language = language || "unknown";
         this.image = image?.original;
         if(this.image == undefined) {
@@ -29,7 +29,7 @@ export default class PrototypePopup {
     }
 
     render() { // changer class
-
+       
         const div = document.createElement("div");
         div.className="popup";
 

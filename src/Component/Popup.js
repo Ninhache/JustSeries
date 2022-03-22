@@ -48,7 +48,6 @@ export default class Popup {
         // Close Popup
         function closeOnClick(event){
             event.preventDefault();
-            console.log(event.target.attributes.class.value);
             if(event.target.attributes.class!==undefined){
                 if(event.target.attributes.class.value === ('popup_container') || 
                    event.target.attributes.class.value ===('closeButton')){

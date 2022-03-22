@@ -8,7 +8,7 @@
       "name" : "Prison Break",
       "img" : "https://static.tvmaze.com/uploads/images/medium_portrait/104/261034.jpg"
     },
-    "note" : 0
+    "note" : 20
   },
   {
     "lastname" : "ALMEIDA",
@@ -19,7 +19,7 @@
       "name" : "Mr. Robot",
       "img" : "https://static.tvmaze.com/uploads/images/medium_portrait/211/528026.jpg"
     },
-    "note" : 0
+    "note" : 40
   },
   {
     "lastname" : "COLLIN",
@@ -30,7 +30,7 @@
       "name" : "Grim",
       "img" : "https://static.tvmaze.com/uploads/images/medium_portrait/69/174906.jpg"
     },
-    "note" : 0
+    "note" : 40
   }
 ]
 

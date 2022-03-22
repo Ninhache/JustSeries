@@ -1,7 +1,8 @@
 export default class PrototypeEpisode {
 
 
-    constructor({name,airdate,image,summary}) {
+    constructor({name,number,airdate,image,summary}) {
+        this.number=number;
         this.name = name;
         this.date = airdate;
         this.image = image?.medium;
@@ -20,10 +21,13 @@ export default class PrototypeEpisode {
         })
 
         div.innerHTML =  `
-            <h2>${this.name}</h2>
-            <img src=${this.image} alt="image of ${this.name}">
-            <span> diffusion : ${this.date}</span>
-            <div class="summary">${this.summary}</div>
+            <h2 class="number">${this.number}</h2>
+            <img class="imgEpisode" src=${this.image} alt="image of ${this.name}">
+            <div class="description"> 
+                <h2>${this.name}</h2>
+                <span><b>Diffusion :</b> ${this.date}</span>
+                <div class="summary">${this.summary}</div>
+            </div>
         `
 
         return div;

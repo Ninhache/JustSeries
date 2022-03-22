@@ -19,13 +19,6 @@ export default class PrototypePopup {
         if(this.image == undefined) {
             this.image = "https://media.discordapp.net/attachments/624976021417885707/949465775146688512/unknown.png"
         }
-        console.log(id);
-        console.log(this.name);
-        console.log(this.rating);
-        console.log(this.premiered);
-        console.log(this.genres);
-        console.log(this.language);
-        console.log(this.image);
     }
 
     render() { // changer class
@@ -59,9 +52,18 @@ export default class PrototypePopup {
             if(event.target.attributes.class.value === 'popup_container' || event.target.attributes.class.value === 'closeButton'){
                 document.querySelector(".popup_container").hidden = true;
                 document.querySelector("body").style.overflow="auto";
+                const url = document.location.search;
+                console.log(url);
+                const tab = url.split('&')
+                let i=0;
+                tab.forEach(element=>{
+                    if(element.includes("id")) tab.splice(i,1);
+                    i++;
+                })
+                window.history.pushState(null,null,window.location.pathname + tab);
             }
         }
-
+        
         const closeButton = document.createElement("div");
         closeButton.className="closeButton";
         closeButton.id="close";
@@ -72,7 +74,6 @@ export default class PrototypePopup {
 
         div.appendChild(closeButton);
       
-
         document.querySelector(".popup_container").addEventListener("click",event =>{
             console.log(event.target.attributes.class.value);
             closeOnClick(event);
@@ -103,6 +104,17 @@ export default class PrototypePopup {
 
 
         div.appendChild(details);
+        
+        let url = window.location.pathname;
+        if(window.location.search === "") {
+            url += "?";
+        } else {
+            url += window.location.search;
+        }
+        url += "&id=" + this.id;
+        window.history.pushState(null,null,  url);
+            
+
 
         return div;
 

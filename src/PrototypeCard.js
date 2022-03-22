@@ -1,5 +1,7 @@
 import { addToFav, removeFromFav, isInFav } from "./FavoriteHandler";
 
+import PrototypePopup from "./PrototypePopup";
+
 export default class PrototypeCard {
 
     constructor(element) {
@@ -22,11 +24,19 @@ export default class PrototypeCard {
 
         divTop.style.cursor = "pointer"; // todo : move to css
         divTop.addEventListener("click", event => {
-            
+            let proto = new PrototypePopup(this.element);
+            let popup_container = document.querySelector(".popup_container");
+            popup_container.style.zIndex="7";
+            popup_container.innerHTML="";
+            popup_container.appendChild(proto.render());
+            popup_container.hidden=false;
+
+            document.querySelector("body").style.overflow="hidden";
+            document.getElementById("close").focus();
         })
         divTop.classList.add("cardShow")
 
-        
+
 
         /* BOTTOM DIV */
         const divBottom = document.createElement("div");
@@ -75,7 +85,6 @@ export default class PrototypeCard {
         div.appendChild(divBottom);
 
         div.classList.add("card");
-        
 
         return div;
     }

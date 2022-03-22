@@ -30,6 +30,9 @@ document.querySelector(".formContent").appendChild(new PrototypeSearchBar().rend
 
 document.querySelector(".userInfo").addEventListener("click", () => Router.navigate("/") );
 
+// hide pupup
+document.querySelector(".popup_container").hidden=true;
+
 // navigate when all is load
 Router.navigate(document.location.pathname + document.location.search); // get full url and move to
 

@@ -22,7 +22,6 @@ class ResultPage extends Page {
         if(urlParams.get("id") !== undefined) {
             this.idQuery = urlParams.get("id");
         }
-        console.log(this.idQuery);
 
         return "<span class='wait'>Wait a moment plz </span>";
     }
@@ -53,7 +52,6 @@ class ResultPage extends Page {
                     element.querySelector(".wait")?.classList.remove("wait");
                 });
     if(this.idQuery!==undefined){
-            console.log(this.idQuery);
             new TvMazeRequester().getById(this.idQuery)
                 .then(data=> data.json())
                 .then(data=> {
@@ -68,8 +66,6 @@ class ResultPage extends Page {
                     document.getElementById("close").focus();
                 });
 
-
-            // console.log(popup);
 
         }
     }

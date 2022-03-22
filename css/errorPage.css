@@ -1,0 +1,38 @@
+.error_container {
+    color: #1B4B65;
+    text-align: center;
+}
+
+.error_container > div {
+    font-size: 3em;
+}
+
+.link_box {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.toHome,
+.toHome:hover,
+.toHome:focus,
+.toHome:active {
+    text-decoration: none;
+}
+
+.toHome::after {
+    content: "";
+    position: relative;
+}
+
+.link_box .toHome::after {
+    display: block;
+    height: 2px;
+    background-color: #1B4B65;
+    animation: 0.5s ease-in-out 0.1s infinite alternate underline;
+
+}
+
+@keyframes underline {
+    from { width: 0; }
+    to   { width: 100%; }
+}

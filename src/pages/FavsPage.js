@@ -1,6 +1,6 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../PrototypeCard";
+import PrototypeCard from "../Component/PrototypeCard";
 import { favIsEmpty } from "../FavoriteHandler";
 import {Sorter} from "../Sorter";
 

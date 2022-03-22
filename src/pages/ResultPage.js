@@ -2,8 +2,8 @@ import { Page } from "./Page";
 import {Sorter} from "../Sorter";
 
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../PrototypeCard";
-import PrototypePopup from "../PrototypePopup";
+import PrototypeCard from "../Component/PrototypeCard";
+import PrototypePopup from "../Component/PrototypePopup";
 
 
 class ResultPage extends Page {

@@ -1,4 +1,4 @@
-import TvMazeRequester from "./api/TvMazeRequester";
+import TvMazeRequester from "../api/TvMazeRequester";
 import PrototypeCard from "./PrototypeCard";
 import PrototypeEpisode from "./PrototypeEpisode";
 

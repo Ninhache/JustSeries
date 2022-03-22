@@ -1,7 +1,7 @@
 import { Router } from "./Router";
 import { HomePage, FavoriPage, TeamPage, ResultPage, ErrorPage } from "./pages/allExports";
 
-import PrototypeSearchBar from './PrototypeSearchBar';
+import PrototypeSearchBar from './Component/PrototypeSearchBar';
 
 const Homepage = new HomePage();
 const Favpage = new FavoriPage();

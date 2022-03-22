@@ -1,5 +1,5 @@
-import { Router } from "./Router";
-import {Sorter} from "./Sorter";
+import { Router } from "../Router";
+import {Sorter} from "../Sorter";
 
 export default class PrototypeSearchBar {
 

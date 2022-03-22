@@ -1,4 +1,4 @@
-import { addToFav, removeFromFav, isInFav } from "./FavoriteHandler";
+import { addToFav, removeFromFav, isInFav } from "../FavoriteHandler";
 
 import PrototypePopup from "./PrototypePopup";
 

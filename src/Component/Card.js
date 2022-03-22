@@ -1,8 +1,8 @@
 import { addToFav, removeFromFav, isInFav } from "../FavoriteHandler";
 
-import PrototypePopup from "./PrototypePopup";
+import Popup from "./Popup";
 
-export default class PrototypeCard {
+export default class Card {
 
     constructor(element) {
         this.element = element;
@@ -24,7 +24,7 @@ export default class PrototypeCard {
 
         divTop.style.cursor = "pointer"; // todo : move to css
         divTop.addEventListener("click", event => {
-            let proto = new PrototypePopup(this.element);
+            let proto = new Popup(this.element);
             let popup_container = document.querySelector(".popup_container");
             popup_container.style.zIndex="7";
             popup_container.innerHTML="";

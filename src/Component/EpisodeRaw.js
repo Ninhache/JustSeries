@@ -1,4 +1,4 @@
-export default class PrototypeEpisode {
+export default class EpisodeRaw {
 
 
     constructor({name,number,airdate,image,summary}) {

@@ -1,7 +1,6 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../Component/PrototypeCard";
-import { favIsEmpty } from "../FavoriteHandler";
+import Card from "../Component/Card";
 import {Sorter} from "../Sorter";
 
 export class FavoriPage extends Page{
@@ -52,7 +51,7 @@ export class FavoriPage extends Page{
             }).then(() => {
                 let data = Sorter.sort_array(this.result); // sort data
                 element.innerHTML = "";
-                data.forEach(item => {element.appendChild(new PrototypeCard(item).render())}) // show data
+                data.forEach(item => {element.appendChild(new Card(item).render())}) // show data
 
                 element.querySelector(".wait")?.classList.remove("wait");
             })
@@ -68,7 +67,7 @@ export class FavoriPage extends Page{
         element.innerHTML = "";
 
         this.result.forEach( (item) => {
-            element.appendChild(new PrototypeCard(item).render());
+            element.appendChild(new Card(item).render());
         })
 
     }

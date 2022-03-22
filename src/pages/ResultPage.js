@@ -2,8 +2,8 @@ import { Page } from "./Page";
 import {Sorter} from "../Sorter";
 
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../Component/PrototypeCard";
-import PrototypePopup from "../Component/PrototypePopup";
+import Card from "../Component/Card";
+import Popup from "../Component/Popup";
 
 
 class ResultPage extends Page {
@@ -47,7 +47,7 @@ class ResultPage extends Page {
                         data = Sorter.sort_array(data);
 
                         data.forEach(item => {
-                            element.appendChild(new PrototypeCard(item).render());
+                            element.appendChild(new Card(item).render());
                         });
                     }
                     element.querySelector(".wait")?.classList.remove("wait");
@@ -57,7 +57,7 @@ class ResultPage extends Page {
             new TvMazeRequester().getById(this.idQuery)
                 .then(data=> data.json())
                 .then(data=> {
-                    let proto = new PrototypePopup(data);
+                    let proto = new Popup(data);
                     let popup_container = document.querySelector(".popup_container");
                     popup_container.style.zIndex="7";
                     popup_container.innerHTML="";
@@ -83,7 +83,7 @@ class ResultPage extends Page {
         element.innerHTML = "";
 
         this.result.forEach( (item) => {
-            element.appendChild(new PrototypeCard(item).render());
+            element.appendChild(new Card(item).render());
         })
     }
 

@@ -1,7 +1,7 @@
 import { Router } from "../Router";
 import {Sorter} from "../Sorter";
 
-export default class PrototypeSearchBar {
+export default class SearchBar {
 
     constructor() { }
 

@@ -1,7 +1,6 @@
 import {Page} from "./Page";
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "../Component/PrototypeCard";
-import { Router } from "../Router";
+import Card from "../Component/Card";
 import {Sorter} from "../Sorter";
 
 export class HomePage extends Page {
@@ -38,7 +37,7 @@ export class HomePage extends Page {
                 element.innerHTML = "";
 
                 for (let i = 0; i < 16; i++) {
-                    this.element.appendChild(new PrototypeCard(data[i]).render());
+                    this.element.appendChild(new Card(data[i]).render());
                 }
             });
 
@@ -50,7 +49,7 @@ export class HomePage extends Page {
         element.innerHTML = "";
 
         for (let i = 0; i < 16; i++) {
-            this.element.appendChild(new PrototypeCard(this.result[i]).render());
+            this.element.appendChild(new Card(this.result[i]).render());
         }
     }
 

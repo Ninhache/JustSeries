@@ -1,8 +1,7 @@
 import TvMazeRequester from "../api/TvMazeRequester";
-import PrototypeCard from "./PrototypeCard";
-import PrototypeEpisode from "./PrototypeEpisode";
+import EpisodeRaw from "./EpisodeRaw";
 
-export default class PrototypePopup {
+export default class Popup {
     constructor({id,name,summary,rating,premiered,genres,language,image}){
         // prévoir si un attribut est undefined ..
         this.id=id;
@@ -94,7 +93,7 @@ export default class PrototypePopup {
                     details.appendChild(titleEpisodes);
                     for(let i=1;i<6;i++){
                         let item = data[data.length-i]
-                        details.appendChild(new PrototypeEpisode(item).render());
+                        details.appendChild(new EpisodeRaw(item).render());
                     }
                 }
             })

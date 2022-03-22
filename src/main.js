@@ -1,7 +1,7 @@
 import { Router } from "./Router";
 import { HomePage, FavoriPage, TeamPage, ResultPage, ErrorPage } from "./pages/allExports";
 
-import PrototypeSearchBar from './Component/PrototypeSearchBar';
+import SearchBar from './Component/SearchBar';
 
 const Homepage = new HomePage();
 const Favpage = new FavoriPage();
@@ -26,7 +26,7 @@ Router.routes = [ // set all pages
 ];
 
 // Display search bar
-document.querySelector(".formContent").appendChild(new PrototypeSearchBar().render());
+document.querySelector(".formContent").appendChild(new SearchBar().render());
 
 document.querySelector(".userInfo").addEventListener("click", () => Router.navigate("/") );
 

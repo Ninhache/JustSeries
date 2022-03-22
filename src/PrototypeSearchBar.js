@@ -16,12 +16,12 @@ export default class PrototypeSearchBar {
                             </form>
                             <div class="sorting">
                                 <select name="sorting_direction" class="sorting_direction">
-                                    <option value="undefined" selected hidden>undefined</option>
+                                    <option value="relevance" selected hidden>relevance</option>
                                     <option value="ASC">Ascending</option>
                                     <option value="DESC">Descending</option>
                                 </select>
                                 <select name="sorting_by" class="sorting_by">
-                                    <option value="undefined" selected hidden>undefined</option>
+                                    <option value="relevance" selected hidden>relevance</option>
                                     <option value="name">Series name</option>
                                     <option value="premiered">First broadcast</option>
                                     <option value="rating">Rating</option>

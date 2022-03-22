@@ -56,8 +56,10 @@ export default class PrototypePopup {
         // Close Button
         function closeOnClick(event){
             event.preventDefault();
-            document.querySelector(".popup_container").hidden = true;
-            document.querySelector("body").style.overflow="auto";
+            if(event.target.attributes.class.value === 'popup_container' || event.target.attributes.class.value === 'closeButton'){
+                document.querySelector(".popup_container").hidden = true;
+                document.querySelector("body").style.overflow="auto";
+            }
         }
 
         const closeButton = document.createElement("div");
@@ -72,9 +74,9 @@ export default class PrototypePopup {
       
 
         document.querySelector(".popup_container").addEventListener("click",event =>{
-            if(event.target.attributes.class.value !== 'popup') {
-                closeOnClick(event);
-            }
+            console.log(event.target.attributes.class.value);
+            closeOnClick(event);
+            
             
         })
 

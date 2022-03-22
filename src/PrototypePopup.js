@@ -31,23 +31,32 @@ export default class PrototypePopup {
         div.className="popup";
 
        
-        div.innerHTML = `<img src=${this.image} width="150" height="150">
-        <h3>${this.name}</h3>
+        div.innerHTML = `<img class="imgSerie" src=${this.image} width="150" height="150">`
+
+
+        // détails
+        const details = document.createElement("div");
+        details.className="details";
+
+        details.innerHTML = `
+        <h1>${this.name}</h1>
         <p>${this.summary}</p>
         <p>${this.rating}</p>
         <p>${this.premiered}</p>
         <p>${this.genres}</p>
         <p>${this.language}</p>
+        <h3>Five last episodes :</h3>
         `
         
+        // Close Button
         function closeOnClick(event){
             event.preventDefault();
             document.querySelector(".popup_container").hidden = true;
             document.querySelector("body").style.overflow="auto";
         }
 
-        const closeButton = document.createElement("button");
-        closeButton.innerHTML="close";
+        const closeButton = document.createElement("div");
+        closeButton.className="closeButton";
         closeButton.id="close";
 
         closeButton.addEventListener("click",event =>{
@@ -56,12 +65,15 @@ export default class PrototypePopup {
 
         div.appendChild(closeButton);
       
+
         document.querySelector(".popup_container").addEventListener("click",event =>{
             if(event.target.attributes.class.value !== 'popup') {
                 closeOnClick(event);
             }
             
         })
+
+        // Episodes
         new TvMazeRequester().getEpisodesById(this.id)
             .then(data => data.json())
             .then(data => {
@@ -71,13 +83,16 @@ export default class PrototypePopup {
                     for(let i=1;i<6;i++){
                         let item = data[data.length-i]
                         console.log(item)
-                        div.appendChild(new PrototypeEpisode(item).render());
+                        details.appendChild(new PrototypeEpisode(item).render());
                     }
                 }
             })
             .catch(err => {
                 console.log(err);
             })
+
+
+        div.appendChild(details);
 
         return div;
 

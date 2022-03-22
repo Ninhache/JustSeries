@@ -21,8 +21,34 @@ Just Series application use the [tvmaze api](https://www.tvmaze.com/) to display
 4) project available here: [http://localhost:8000/](http://localhost:8000/) !! 
 
 ## images/screen
-[//]: # (todo : faire des screen !!!)
-_image du site_
+
+### home page
+<img src="img/final/home-page.png">
+
+### text hover a series card
+<img src="img/final/card-hover.png">
+
+### add to favs here
+<img src="img/final/favs-hover.png">
+
+### website menu 
+<img src="img/final/menu-hover.png">
+
+### favs page
+<img src="img/final/favs-page.png">
+
+### search page
+<img src="img/final/search-breaking_bad.png">
+
+### you can sort by name/date/rating
+<img src="img/final/sort-by.png">
+
+### and reverse the result
+<img src="img/final/sort-direction.png">
+
+### Team page
+<img src="img/final/team-page.png">
+
 
 ## Roadmap
 - List of future series
